@@ -102,8 +102,13 @@
                 <label class="control-label" for="handle">Domain Ihrer Lokalität</label>
                 <div class="controls">
                     <input type="text" name="handle" id="handle" placeholder="Ihre Domain" value="<?= $user->handle ?>" />
-
-                    <span class="help-block">www.snackfinder.de/imbiss/ihre-domain</span>
+                    <div id="handle-response-indicator" class="input-append">
+                        <span class="add-on">✔</span>
+                    </div>
+                    <?php foreach ($errors['handle'] as $validator => $message): ?>
+                        <span class="help-block <?= $validator ?>"><?= $message ?></span>
+                    <?php endforeach ?>
+                    <span class="help-block">www.snackfinder.de/imbiss/<?= $user->handle ?></span>
                 </div>
             </div>
             <div class="control-group">

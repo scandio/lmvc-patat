@@ -17,10 +17,12 @@ class Registration extends controllers\Registration
         static::render();
     }
 
-    public static function getHandle($resturant)
+    public static function getHandle($restaurant = null, $handle = null)
     {
         return static::renderJson([
-            'handle'    => \util\String::urlSlug($resturant)
+            'handle'        => \util\String::urlSlug($restaurant),
+            'used'          => $handle == null ? true : \models\Locations::findBy('handle', $handle)->count() > 0,
+            'restaurant'    => $handle == null ? $handle : $restaurant # calling /handle//a will will cause $restaurant == "a"
         ]);
     }
 

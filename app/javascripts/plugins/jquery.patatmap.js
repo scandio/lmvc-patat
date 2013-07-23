@@ -75,7 +75,7 @@
             var that = this;
 
             $.ajax({
-                url: this.settings.endpointUrl + that.$element.data('userid'),
+                url: that.settings.endpointUrl + that.$element.data('userid'),
                 context: document.body,
                 data: {
                     format: 'json'

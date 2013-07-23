@@ -34,4 +34,17 @@ class Signup extends forms\Signup
         'mandatory' => ['message' => 'Bitte das Passwort zweimal eingeben!'],
         'check-password-retyped' => ['message' => 'Die Passwörter stimmen nicht überein!']
     ];
+    public $handle = [
+        'mandatory' => ['message' => 'Bitte eine Url wählen!'],
+        'check-handle' => ['message' => 'Die Url wird bereits verwendet oder ist zu kurz:']
+    ];
+
+    protected function checkHandle($name)
+    {
+        if (!empty($this->request()->$name) && strlen($this->request()->$name) <= 3
+            || (\models\Locations::findBy('handle', $this->request()->$name)->count() > 0)
+        ) {
+            $this->setError($name, array($this->request()->$name));
+        }
+    }
 }
