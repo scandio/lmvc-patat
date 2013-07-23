@@ -1,8 +1,8 @@
 # LMVC Patat (Find a snack)
 
-LMVC Patat is a small app built using the LMVC Framework and its Modules.
+LMVC Patat is a small app built using the LMVC Framework and its modules.
 
-It helps a hungry person find a snack within walking distance.
+A small little app suggesting fast food restaurant within walking distance to a hungry person.
 
 ## Further references
 
