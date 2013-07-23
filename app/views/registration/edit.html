@@ -1,15 +1,16 @@
 <?php
     use ui\UI;
 
-    $errors['password'] = $errors['password'] ? $errors['password'] : [];
-    $errors['passwordRetyped'] = $errors['passwordRetyped'] ? $errors['passwordRetyped'] : [];
-    $errors['username'] = $errors['username'] ? $errors['username'] : [];
-    $errors['email'] = $errors['email'] ? $errors['email'] : [];
+    $errors['password'] = $errors['password'] ?: [];
+    $errors['passwordRetyped'] = $errors['passwordRetyped'] ?: [];
+    $errors['username'] = $errors['username'] ?: [];
+    $errors['email'] = $errors['email'] ?: [];
 
-    $errors['restaurant'] = $errors['restaurant'] ? $errors['restaurant'] : [];
-    $errors['city'] = $errors['city'] ? $errors['city'] : [];
-    $errors['zip'] = $errors['zip'] ? $errors['zip'] : [];
-    $errors['place'] = $errors['place'] ? $errors['place'] : [];
+    $errors['restaurant'] = $errors['restaurant'] ?: [];
+    $errors['city'] = $errors['city'] ?: [];
+    $errors['zip'] = $errors['zip'] ?: [];
+    $errors['place'] = $errors['place'] ?: [];
+    $errors['handle'] = $errors['handle'] ?: [];
 ?>
 
 <div class="row-fluid">
