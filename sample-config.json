@@ -1,0 +1,28 @@
+{
+    "appPath": "./",
+    "appNamespace": "",
+    "controllers": ["controllers"],
+
+    "modules": [
+        "Scandio\\lmvc\\modules\\less",
+        "Scandio\\lmvc\\modules\\upload",
+        "Scandio\\lmvc\\modules\\sass",
+        "Scandio\\lmvc\\modules\\assetpipeline",
+        "Scandio\\lmvc\\modules\\mustache",
+        "Scandio\\lmvc\\modules\\security",
+        "Scandio\\lmvc\\modules\\registration"
+    ],
+
+    "views": ["./app/views"],
+
+    "dsn": "mysql:host=localhost;dbname=lmvc_patat",
+    "username": "root",
+    "password": "boot",
+
+    "security": {
+        "principal": "\\Scandio\\lmvc\\modules\\security\\handlers\\database\\DatabasePrincipal"
+    },
+    "registration": {
+        "mediator": "\\Scandio\\lmvc\\modules\\registration\\handlers\\DatabaseMediator"
+    }
+}
