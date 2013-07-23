@@ -24,7 +24,7 @@
 
             this.cacheElems();
 
-            this.cachedElems.$triggerEl.on('keyup', function(e) {
+            this.cachedElems.$triggerEl.on('blur', function(e) {
                 e.preventDefault();
                 that.suggestHandle();
             });
@@ -45,7 +45,7 @@
             var that = this;
 
             $.ajax({
-                url: that.settings.endpointUrl + 'handle/' + that.cachedElems.$triggerEl.val() + '/' + that.cachedElems.$handleEl.val(),
+                url: that.settings.endpointUrl + 'handle/' + that.cachedElems.$triggerEl.val(),
                 context: document.body,
                 data: {
                 }
@@ -65,7 +65,7 @@
                 }
             }).done(function(response) {
                 that.cachedElems.$handleEl.val(response.handle);
-                that.cachedElems.$responseIndicatorEl.html(response.used === true ? "✗" : "✔");
+                that.cachedElems.$responseIndicatorEl.html(response.isUsed === true ? "✗" : "✔");
             });
         }
     };

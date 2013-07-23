@@ -21,8 +21,8 @@ class Registration extends controllers\Registration
     {
         return static::renderJson([
             'handle'        => \util\String::urlSlug($restaurant),
-            'used'          => $handle == null ? true : \models\Locations::findBy('handle', $handle)->count() > 0,
-            'restaurant'    => $handle == null ? $handle : $restaurant # calling /handle//a will will cause $restaurant == "a"
+            'isUsed'        => strlen($handle) <= 5 || strlen($restaurant) <= 5 ? true : \models\Locations::findBy('handle', $handle)->count() > 0,
+            'restaurant'    => $restaurant
         ]);
     }
 

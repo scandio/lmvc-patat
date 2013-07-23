@@ -41,7 +41,7 @@ class Signup extends forms\Signup
 
     protected function checkHandle($name)
     {
-        if (!empty($this->request()->$name) && strlen($this->request()->$name) <= 3
+        if (!empty($this->request()->$name) && strlen($this->request()->$name) <= 5
             || (\models\Locations::findBy('handle', $this->request()->$name)->count() > 0)
         ) {
             $this->setError($name, array($this->request()->$name));
