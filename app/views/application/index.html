@@ -1,1 +1,55 @@
-<h1>Hello LMVC-afresh is calling!</h1>
+<?php
+    use ui\UI;
+?>
+
+<h2>Wir versuchen deinen Ort zu bestimmen!</h2>
+
+<h3>…oder geben Sie Ihre Adresse an.</h3>
+<form id="location-form" class="form-horizontal" method="POST" action="<?= $app->url('Dishes::index') ?>">
+    <fieldset>
+        <div class="control-group">
+            <label class="control-label" for="city">Stadt</label>
+            <div class="controls">
+                <input type="text" name="city" id="city" placeholder="Stadt" />
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label" for="zip">Postleitzahl</label>
+            <div class="controls">
+                <input type="number" name="zip" id="zip" placeholder="Postleitzahl" />
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label" for="place">Straße & Hausnummer</label>
+            <div class="controls">
+                <input type="text" name="place" id="place" placeholder="Straße & Hausnummer" />
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label" for="place">Ort suchen</label>
+            <div class="controls">
+                <a id="search-long-lat" class="btn btn-primary btn-big" href="#"><i class="icon-search icon-white"></i></a>
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label" for="longitude">Längengrad</label>
+            <div class="controls">
+                <input type="text" name="longitude" id="longitude" placeholder="Längengrad" />
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label" for="latitude">Breitengrad</label>
+            <div class="controls">
+                <input type="text" name="latitude" id="latitude" placeholder="Breitengrad" />
+            </div>
+        </div>
+    </fieldset>
+
+    <div class="control-group">
+        <button class="btn btn-primary" type="submit" id="signup" name="signup">Finde Patat!</button>
+    </div>
+</form>
+
+<?= UI::js($app->assets(['polyfills/geolocation.polyfill.js'], [])) ?>
+<?= UI::js($app->assets(['views/application.index-reroute.js', 'jquery.application-index.js'], [])) ?>
+<?= UI::js($app->assets(['plugins/jquery.nominatim.js'], [])) ?>

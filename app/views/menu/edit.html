@@ -1,0 +1,35 @@
+<?php
+    use ui\UI;
+?>
+
+<div class="row-fluid">
+    <div id="dropzone" class="span3">
+        <form action="<?= $app->url('Upload::img', 'sha1') ?>" class="dropzone dz-clickable" id="image-upload">
+            <div class="dz-default dz-message">
+                <?php if ($dish->img == null): ?>
+                    <span id="no-img">Bild hochladen!</span>
+                    <img width=100 src="<?= $app->image(['uploads', 'placeholder.png']) ?>" alt="" />
+                <?php else: ?>
+                    <img  width=75 height=100 src="<?= $app->image(['uploads', $dish->img], ['w' => 800, 'h' => 600]) ?>" alt="" />
+                <?php endif; ?>
+            </div>
+        </form>
+    </div>
+
+    <div class="span7">
+        <form id="menu-form" method="POST" action="<?= $app->url('Menu::edit', $dish->id) ?>">
+            <fieldset>
+                <?= UI::checkbox('advertised', 'Bewerben', (bool) $dish->advertised, $dish-advertised, $errors['advertised'], false) ?>
+                <?= UI::textField('name', null, $dish->name, $errors['name'], 'Name') ?>
+                <?= UI::textField('price', null, $dish->price, $errors['price'], 'Preis', false, '€') ?>
+                <?= UI::textArea('description', null, $dish->description, $errors['description'], 'Beschreibung') ?>
+                <?= UI::saveCancelButtons($app->url('Menu::index')) ?>
+            </fieldset>
+            <input id="filename" type="hidden" name="img" value="<?= $img ?>"  />
+        </form>
+    </div>
+</div>
+
+<?= UI::js($app->assets(['dropzone.js'], [])) ?>
+<?= UI::js($app->assets(['views/jquery.menu-edit.js'], [])) ?>
+<?= UI::css($app->assets(['dropzone.css'], [])) ?>

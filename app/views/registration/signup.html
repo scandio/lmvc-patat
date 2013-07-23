@@ -1,0 +1,168 @@
+<?php
+    use ui\UI;
+
+    $errors['password'] = $errors['password'] ? $errors['password'] : [];
+    $errors['passwordRetyped'] = $errors['passwordRetyped'] ? $errors['passwordRetyped'] : [];
+    $errors['username'] = $errors['username'] ? $errors['username'] : [];
+    $errors['email'] = $errors['email'] ? $errors['email'] : [];
+
+    $errors['restaurant'] = $errors['restaurant'] ? $errors['restaurant'] : [];
+    $errors['city'] = $errors['city'] ? $errors['city'] : [];
+    $errors['zip'] = $errors['zip'] ? $errors['zip'] : [];
+    $errors['place'] = $errors['place'] ? $errors['place'] : [];
+?>
+
+<div class="row-fluid">
+    <?php if($error): ?>
+    <div class="alert alert-error">
+        <strong>Woopsi!</strong> Es fehlen da noch Daten, bitte alles vollständig ausfüllen!
+    </div>
+    <?php elseif($success): ?>
+    <div class="alert alert-success">
+        <strong>Sehr gut!</strong> Alles glatt gelaufen, die Bude ist online!
+    </div>
+    <?php endif; ?>
+
+    <form id="registration-form" class="form-horizontal" method="POST" action="<?= $app->url('Registration::signup') ?>">
+        <fieldset class="span6">
+            <legend>Benutzerdaten</legend>
+            <div class="control-group">
+                <label class="control-label" for="username">Benutzername</label>
+                <div class="controls">
+                    <input type="text" name="username" id="username" placeholder="Benutzername" value="<?= $user->username ?>" />
+
+                    <?php foreach ($errors['username'] as $validator => $message): ?>
+                        <span class="help-block <?= $validator ?>"><?= $message ?></span>
+                    <?php endforeach ?>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="password">Passwort</label>
+                <div class="controls">
+                    <input type="password" name="password" id="password" placeholder="Passwort"  value="<?= $user->password ?>" />
+
+                    <?php foreach ($errors['password'] as $validator => $message): ?>
+                        <span class="help-block <?= $validator ?>"><?= $message ?></span>
+                    <?php endforeach ?>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="password">Passwort wiederholen</label>
+                <div class="controls">
+                    <input type="password" name="passwordRetyped" id="password-retyped" placeholder="Passwort wiederholen"  value="<?= $user->passwordRetyped ?>" />
+
+                    <?php foreach ($errors['passwordRetyped'] as $validator => $message): ?>
+                        <span class="help-block <?= $validator ?>"><?= $message ?></span>
+                    <?php endforeach ?>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="username">Vor- & Nachname</label>
+                <div class="controls">
+                    <input type="text" name="fullname" id="fullname" placeholder="Vor- & Nachname" value="<?= $user->fullname ?>" />
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="password">E-Mail</label>
+                <div class="controls">
+                    <input type="email" name="email" id="email" placeholder="E-Mail"  value="<?= $user->email ?>" />
+
+                    <?php foreach ($errors['email'] as $validator => $message): ?>
+                        <span class="help-block <?= $validator ?>"><?= $message ?></span>
+                    <?php endforeach ?>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="password">Telefon</label>
+                <div class="controls">
+                    <input type="tel" name="phone" id="phone" placeholder="Telefon"  value="<?= $user->phone ?>" />
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="password">Mobil</label>
+                <div class="controls">
+                    <input type="tel" name="mobile" id="mobile" placeholder="Mobil"  value="<?= $user->mobile ?>" />
+                </div>
+            </div>
+        </fieldset>
+
+        <fieldset class="span6">
+            <legend>Dein Standort</legend>
+            <div class="control-group">
+                <label class="control-label" for="restaurant">Name Ihrer Lokalität</label>
+                <div class="controls">
+                    <input type="text" name="restaurant" id="restaurant" placeholder="Name Ihrer Lokalität"  value="<?= $user->restaurant ?>" />
+
+                    <?php foreach ($errors['restaurant'] as $validator => $message): ?>
+                        <span class="help-block <?= $validator ?>"><?= $message ?></span>
+                    <?php endforeach ?>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="handle">Domain Ihrer Lokalität</label>
+                <div class="controls">
+                    <input type="text" name="handle" id="handle" placeholder="Ihre Domain" value="<?= $user->handle ?>" />
+
+                    <span class="help-block">www.snackfinder.de/imbiss/ihre-domain</span>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="city">Stadt</label>
+                <div class="controls">
+                    <input type="text" name="city" id="city" placeholder="Stadt"  value="<?= $user->city ?>" />
+
+                    <?php foreach ($errors['city'] as $validator => $message): ?>
+                        <span class="help-block <?= $validator ?>"><?= $message ?></span>
+                    <?php endforeach ?>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="zip">Postleitzahl</label>
+                <div class="controls">
+                    <input type="number" name="zip" id="zip" placeholder="Postleitzahl"  value="<?= $user->zip ?>" />
+
+                    <?php foreach ($errors['zip'] as $validator => $message): ?>
+                        <span class="help-block <?= $validator ?>"><?= $message ?></span>
+                    <?php endforeach ?>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="place">Straße</label>
+                <div class="controls">
+                    <input type="text" name="place" id="place" placeholder="Straße & Hausnummer"  value="<?= $user->place ?>" />
+
+                    <?php foreach ($errors['place'] as $validator => $message): ?>
+                    <span class="help-block <?= $validator ?>"><?= $message ?></span>
+                    <?php endforeach ?>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="place">Ort suchen</label>
+                <div class="controls">
+                    <a id="search-long-lat" class="btn btn-small" href="#"><i class="icon-search"></i></a>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="place">Längengrad</label>
+                <div class="controls">
+                    <input type="text" name="longitude" id="longitude" placeholder="Längengrad"  value="<?= $user->longitude ?>" />
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="latitude">Breitengrad</label>
+                <div class="controls">
+                    <input type="text" name="latitude" id="latitude" placeholder="Breitengrad"  value="<?= $user->latitude ?>" />
+
+                </div>
+            </div>
+        </fieldset>
+
+        <div class="control-group pull-right">
+            <button class="btn btn-primary" type="submit" id="signup" name="signup" value="true">Anmelden</button>
+            <button class="btn" href="<?= $app->url('Application::index') ?>">Zurücksetzen</button>
+        </div>
+    </form>
+</div>
+
+<?= UI::js($app->assets(['plugins/jquery.nominatim.js'], [])) ?>
+<?= UI::js($app->assets(['views/jquery.register.js'], [])) ?>

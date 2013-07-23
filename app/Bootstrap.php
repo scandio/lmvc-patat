@@ -3,6 +3,7 @@
 use troba\EQM\EQM;
 use Scandio\lmvc\LVC;
 use Scandio\lmvc\modules\assetpipeline;
+use Scandio\lmvc\modules\upload;
 
 class Bootstrap extends \Scandio\lmvc\Bootstrap
 {
@@ -39,6 +40,11 @@ class Bootstrap extends \Scandio\lmvc\Bootstrap
                     'fallbacks'  => []
                 ]
             ]
+        ]);
+
+        upload\Bootstrap::configure([
+            'root'              => static::getPath(),
+            'uploadDirectory'   => 'img/uploads'
         ]);
     }
 }

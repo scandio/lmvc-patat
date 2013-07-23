@@ -3,8 +3,10 @@
   "version": "0.0.1",
   "dependencies": {
     "jquery": "latest",
-    "neat": "latest",
     "bourbon": "latest",
-    "normalize.scss": "latest"
+    "normalize.scss": "latest",
+    "bootstrap": "~2.3.2",
+    "dropzone": "~3.6.1",
+    "gmaps": "https://github.com/HPNeo/gmaps.git#~0.4.4"
   }
 }

@@ -1,0 +1,63 @@
+<div class="ios-list-wrap">
+    <div class="row-fluid">
+        <div class="pagination pagination-medium">
+            <ul>
+                <?php
+                    $alphabet = range('A', 'Z');
+
+                    foreach ($alphabet as $letter) {
+                        echo '<li class="active"><a href="#'.$letter.'">'.$letter.'</a></li>';
+                }
+                ?>
+            </ul>
+        </div>
+    </div>
+
+    <div class="patat-list">
+        <dl>
+            <?php foreach($dishesGrouped as $groupedDishes): ?>
+            <dt id="<?= $groupedDishes['sortLetter']?>" name="<?= $groupedDishes['sortLetter']?>"><?= $groupedDishes['sortLetter'] ?></dt>
+
+            <?php foreach($groupedDishes['dishes'] as $dish): ?>
+            <dd class="">
+                <div class="span3 hidden-phone">
+                    <a class="image" href="<?= $app->url('Dishes::map', $dish->user_id) ?>">
+                        <?php if($dish->img): ?>
+                        <img width=100 src="<?= $app->image(['uploads', $dish->img], ['w' => 800, 'h' => 600]) ?>" alt="" />
+                        <?php else: ?>
+                        <img width=100 src="<?= $app->image(['uploads', 'placeholder.png']) ?>" alt="" />
+                        <?php endif; ?>
+                    </a>
+                </div>
+                <div class="description span9">
+                    <div class="row-fluid">
+                        <h1>
+                            <a href="
+                                <?= $app->url('Imbiss::index', $dish->handle)
+                                ?>"><?= $dish->restaurant ?>
+                            </a>
+                            <span class="distance">
+                                <small>Luftlinie:</small> ~<?= $dish->distance ?>
+                            </span>
+                        </h1>
+
+                        <div class="span8">
+                            <h4><a href="<?= $app->url('Dishes::map', $dish->user_id) ?>"><?= $dish->street ?></a></h4>
+                            <h5><a href="tel:<?= $dish->phone ?>"><?= $dish->phone ?></a></h5>
+                        </div>
+
+                        <div class="clearfix row-fluid">
+                            <h2><?= $dish->name ?> <span class="price"><?= $dish->price ?> €</span></h2>
+                            <p class="span8">
+                                <?= $dish->description ?>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </dd>
+            <?php endforeach; ?>
+
+            <?php endforeach; ?>
+        </dl>
+    </div>
+</div>

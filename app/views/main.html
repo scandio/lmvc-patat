@@ -8,38 +8,88 @@
 <!doctype html>
 <html>
 <head>
-    <title>LMVC Afresh</title>
+    <title>Patat</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!--
-    <?= UI::css($app->assets(['bootstrap.css', 'bootstrap-responsive.css'], [])) ?>
+    <link rel="icon" href="<?= $app->image(['favicon.ico']) ?>" type="image/x-icon">
 
-    <?= UI::css($app->assets(['styles.less'])) ?>
+    <?= UI::css($app->assets(['bootstrap-theme.css'], [])) ?>
+    <?= UI::css($app->assets(['bootstrap-responsive.css'], [])) ?>
 
-    <?= UI::js($app->assets(['jquery-1.9.1.min.js', 'bootstrap.min.js'])) ?>
-    -->
+    <?= UI::css($app->assets(['style.css'], [])) ?>
+
+    <!-- Library includes -->
+    <?= UI::js($app->assets(['jquery.min.js'], [])) ?>
+
+    <!-- Plugin includes -->
+    <?= UI::js($app->assets(['bootstrap-collapse.js'], [])) ?>
+
+    <!-- Run includes -->
+    <?= UI::js($app->assets(['main.js'], [])) ?>
 </head>
 <body>
-<div class="container-fluid">
-    <header>
+<div class="outer-wrapper row-fluid">
+    <?=
+        Html::header(['class' => 'row-fluid'],
+            Html::div(['class' => 'pitcher'],
+                Html::div(['class' => 'bar-left span2 visible-desktop visible-tablet'],
+                    Html::img(['src' => $app->image(['header-fries.png'])], null)
+                )
+                .
+                Html::div(['class' => 'bar-middle span8'],
+                    Html::h1([], 'Hunger?' . Html::span(['class' => 'brand'], 'Patat!'))
+                )
+                .
+                Html::div(['class' => 'bar-right span2 visible-desktop visible-tablet'],
+                    Html::img(['src' => $app->image(['header-ketchup.png'])], null)
+                )
+            )
+        );
+    ?>
 
-    </header>
+    <div class="navbar">
+        <div class="navbar-inner">
+            <div class="container">
+                <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </a>
 
-    <div class="row-fluid">
-        <?php include($app->view) ?>
+                <a class="brand" href="<?= $app->url('Application::index') ?>">Patat</a>
+
+                <div class="nav-collapse collapse">
+                    <nav>
+                        <ul class="nav pull-left">
+                            <li class=""><a href="<?= $app->url('Application::index') ?>">Home</a></li>
+                            <?php if(!Security::get()->isAuthenticated()): ?>
+                                <li><a href="<?= $app->url('Registration::signup') ?>">Anmelden</a></li>
+                            <?php endif; ?>
+                        </ul>
+
+                        <ul class="nav pull-right">
+                            <?php if(Security::get()->isAuthenticated()): ?>
+                                <li><a href="<?= $app->url('Registration::edit') ?>">Imbiss</a></li>
+                            <?php endif; ?>
+                            <li><a href="<?= $app->url('Menu::index') ?>">Menu</a></li>
+                            <?php if(Security::get()->isAuthenticated()): ?>
+                                <li><a href="<?= $app->url('Security::logout') ?>">Ausloggen</a></li>
+                            <?php endif; ?>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
     </div>
 
-    <div class="example">
-        <?=
-            Html::ul(
-                [
-                    'class' => 'wrap-it'
-                ], Html::li(null, ['item-1', 'item-2', 'item-3'])
-            );
-        ?>
+    <div class="content-outer-wrapper row-fluid">
+        <div class="content-inner-wrapper">
+            <?php include($app->view) ?>
+        </div>
     </div>
 
-    <footer>
+    <footer class="row-fluid">
 
     </footer>
 </div>

@@ -1,0 +1,24 @@
+<?php
+    $name = (isset($params[0]) ? $params[0] : null);
+    $label = (isset($params[1]) ? $params[1] : null);
+    $value = (isset($params[2]) ? $params[2] : null);
+    $error = (isset($params[3]) ? $params[3] : array());
+    $placeholder = (isset($params[4]) ? $params[4] : '');
+    $disabled = (isset($params[5]) ? $params[5] : false);
+?>
+<div class="control-group <?= $name ?>" xmlns="http://www.w3.org/1999/html">
+    <?php if($label): ?>
+    <label class="control-label <?= $name ?>" for="<?= $name ?>"><?= $label ?></label>
+    <?php endif ?>
+    <div class="controls">
+        <textarea rows="6" <?= ($disabled) ? 'disabled' : '' ?>
+        name="<?= $name ?>"
+        class="<?= ($error) ? 'validation-error' : '' ?>"
+        id="<?= $name ?>"
+        placeholder="<?= $placeholder ?>"
+        ><?= $value ?></textarea>
+        <?php foreach ($error as $validator => $message): ?>
+            <span class="help-inline <?= $validator ?>"><?= $message ?></span>
+        <?php endforeach ?>
+    </div>
+</div>

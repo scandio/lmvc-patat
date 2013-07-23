@@ -1,0 +1,51 @@
+<?php
+    use ui\UI;
+?>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th class="">#</th>
+            <th class="hidden-phone hidden-tablet">Bild</th>
+            <th>Name</th>
+            <th class="hidden-phone">Beschreibung</th>
+            <th class="">Preis</th>
+            <th></th>
+            <th>
+                <a class="btn btn-small btn-block" href="<?= $app->url('Menu::edit') ?>" title="Neues Gericht hinzufügen">
+                    <span class="icon-plus-sign icon-black"></span>
+                </a>
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+    <?php foreach ($dishes as $dish): ?>
+    <tr>
+        <td class=""><?= $dish->id ?></td>
+        <td class="hidden-phone hidden-tablet">
+            <?php if($dish->img): ?>
+                <img width=100 src="<?= $app->image(['uploads', $dish->img], ['w' => 800, 'h' => 600]) ?>" alt="" />
+            <?php else: ?>
+                <img width=100 src="<?= $app->image(['uploads', 'placeholder.png']) ?>" alt="" />
+            <?php endif; ?>
+        </td>
+        <td><a href="<?= $app->url('Menu::edit', $dish->id) ?>"><?= $dish->name ?></a></td>
+        <td class="hidden-phone"><a href="<?= $app->url('Menu::edit', $dish->id) ?>"><?= $dish->description ?></a></td>
+        <td class=""><?= $dish->price ?> €</td>
+        <td><?= UI::checkbox('advertised', null, (bool) $dish->advertised, 'Ja', null, true) ?></td>
+        <td>
+            <div class="btn-group">
+                <a class="btn btn-mini" href="<?= $app->url('Menu::edit', $dish->id) ?>" title="Gericht editieren">
+                    <span class="icon-edit"></span>
+                    <span class="hidden-phone"></span>
+                </a>
+                <a class="btn btn-mini btn-danger" href="<?= $app->url('Menu::delete', $dish->id) ?>"
+                   title="Gericht löschen">
+                    <span class="icon-trash icon-white"></span>
+                </a>
+            </div>
+        </td>
+    </tr>
+    <?php endforeach ?>
+    </tbody>
+</table>

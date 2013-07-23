@@ -1,0 +1,24 @@
+<?php
+    $name = $params[0];
+    $label = (isset($params[1]) ? $params[1] : null);
+    $value = (isset($params[2]) ? $params[2] : null);
+    $options = (isset($params[3]) ? $params[3] : null);
+    $error = (isset($params[4]) ? $params[4] : array());
+    $disabled = (isset($params[5]) ? $params[5] : false);
+?>
+<div class="control-group <?= $name ?>">
+    <?php if($label): ?>
+    <label class="control-label <?= $name ?>"><?= $label ?></label>
+    <?php endif ?>
+    <div class="controls">
+        <?php foreach ($options as $optionKey => $optionValue): ?>
+        <label><input <?= ($disabled) ? 'disabled' : ' ' ?>
+            type="checkbox"
+            name="<?= $name ?>[]" <?= (in_array($optionKey, $value)) ? 'checked="checked" ' : ' '?>
+            value="<?= $optionKey ?>"/> <?= $optionValue ?></label>
+        <?php endforeach ?>
+        <?php foreach ($error as $validator => $message): ?>
+        <span class="help-inline <?= $validator ?>"><?= $message ?></span>
+        <?php endforeach ?>
+    </div>
+</div>
