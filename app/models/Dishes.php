@@ -124,6 +124,22 @@ class Dishes
         return $group === true ? $this->_groupDishes($dishes) : $dishes;
     }
 
+    public function getDishByUser($dishId, $userId)
+    {
+        $dishes = static::query()
+            ->select('*')
+            ->where(
+                'Dishes.user_id = :user_id AND Dishes.id = :dish_id',
+                [
+                    'user_id' => $userId,
+                    'dish_id' => $dishId,
+                ]
+            )
+            ->one();
+
+        return $dishes;
+    }
+
     private function _groupDishes($dishes) {
         $dishesGrouped = [];
 

@@ -23,16 +23,8 @@ class Menu extends SecureController {
         if (is_null($id)) {
             $dish = new \models\Dishes();
         } else {
-            $dish = \models\Dishes::query()
-                        ->select('*')
-                        ->where(
-                            'Dishes.user_id = :user_id AND Dishes.id = :dish_id',
-                            [
-                                'user_id' => Security::get()->currentUser()->id,
-                                'dish_id' => $id,
-                            ]
-                        )
-                        ->one();
+            $dishModel = new \models\Dishes();
+            $dish = $dishModel->getDishByUser(Security::get()->currentUser()->id, $id);
         }
 
         $form = new \forms\Dish();
