@@ -1,7 +1,7 @@
 ;(function ( $, window, document, undefined ) {
     var pluginName = "patatmap",
         defaults = {
-            endpointUrl: location.origin + "/LMVC/lmvc-patat/dishes/location/",
+            endpointUrl: location.origin + "/" + window.lmvcConfig.appDir + "/dishes/location/",
             draw: 'map'
         },
         cachedElemes= {};
