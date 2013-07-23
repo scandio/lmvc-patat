@@ -1,7 +1,8 @@
 config.json
 /app/javascripts/config.js
 /.idea/
-/composer/
 /bower/
+/composer/
+/composer.phar
 /composer.lock
 _cache/
