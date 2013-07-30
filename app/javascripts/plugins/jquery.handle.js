@@ -45,26 +45,21 @@
             var that = this;
 
             $.ajax({
-                url: that.settings.endpointUrl + 'handle/' + that.cachedElems.$triggerEl.val(),
+                url: that.settings.endpointUrl + 'suggestHandle/' + that.cachedElems.$triggerEl.val(),
                 context: document.body,
-                data: {
-                }
+                data: { }
             }).done(function(response) {
                 that.cachedElems.$handleEl.val(response.handle);
-                that.cachedElems.$triggerEl.val(response.restaurant);
-                that.cachedElems.$responseIndicatorEl.html(response.used === true ? "✗" : "✔");
             });
         },
         validateHandle: function() {
             var that = this;
 
             $.ajax({
-                url: that.settings.endpointUrl + 'handle/' + that.cachedElems.$handleEl.val() + '/' + that.cachedElems.$triggerEl.val(),
+                url: that.settings.endpointUrl + 'validateHandle/' + that.cachedElems.$handleEl.val(),
                 context: document.body,
-                data: {
-                }
+                data: { }
             }).done(function(response) {
-                that.cachedElems.$handleEl.val(response.handle);
                 that.cachedElems.$responseIndicatorEl.html(response.isUsed === true ? "✗" : "✔");
             });
         }
