@@ -78,7 +78,8 @@ class Registration extends controllers\Registration
 
     public static function edit($redirect = true)
     {
-        $userId             = security\Security::get()->currentUser()-id;
+        $userId             = security\Security::get()->currentUser()->id;
+
         $userModel          = \models\Users::query()
                                 ->select('*')
                                 ->innerJoin(new \models\Locations(), 'Users.id = Locations.user_id')
