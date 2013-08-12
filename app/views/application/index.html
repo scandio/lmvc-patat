@@ -1,5 +1,6 @@
 <?php
     use ui\UI;
+    use Scandio\lmvc\modules\assetpipeline\view\Asset;
 ?>
 
 <h2>Wir versuchen deinen Ort zu bestimmen!</h2>
@@ -50,6 +51,6 @@
     </div>
 </form>
 
-<?= UI::js($app->assets(['polyfills/geolocation.polyfill.js'], [])) ?>
-<?= UI::js($app->assets(['plugins/jquery.nominatim.js'], [])) ?>
-<?= UI::js($app->assets(['views/application.index-reroute.js', 'jquery.application-index.js'], [])) ?>
+<?= UI::js(Asset::assets(['polyfills/geolocation.polyfill.js'], [])) ?>
+<?= UI::js(Asset::assets(['plugins/jquery.nominatim.js'], [])) ?>
+<?= UI::js(Asset::assets(['views/application.index-reroute.js', 'jquery.application-index.js'], [])) ?>

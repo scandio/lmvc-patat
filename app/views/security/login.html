@@ -1,5 +1,6 @@
 <?php
     use ui\UI;
+    use Scandio\lmvc\modules\assetpipeline\view\Asset;
 ?>
 
 <?php if($failure): ?>
@@ -33,4 +34,4 @@
     </fieldset>
 </form>
 
-<?= UI::js($app->assets(['plugins/jquery.security.login.js'], [])) ?>
+<?= UI::js(Asset::assets(['plugins/jquery.security.login.js'], [])) ?>

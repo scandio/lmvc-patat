@@ -1,5 +1,6 @@
 <?php
     use ui\UI;
+    use Scandio\lmvc\modules\assetpipeline\view\Asset;
 
     $errors['password'] = $errors['password'] ?: [];
     $errors['passwordRetyped'] = $errors['passwordRetyped'] ?: [];
@@ -169,5 +170,5 @@
     </form>
 </div>
 
-<?= UI::js($app->assets(['plugins/jquery.nominatim.js'], [])) ?>
-<?= UI::js($app->assets(['views/jquery.register.js'], [])) ?>
+<?= UI::js(Asset::assets(['plugins/jquery.nominatim.js'], [])) ?>
+<?= UI::js(Asset::assets(['views/jquery.register.js'], [])) ?>

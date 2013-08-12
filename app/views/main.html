@@ -1,5 +1,6 @@
 <?php
     use ui\UI;
+    use Scandio\lmvc\modules\assetpipeline\view\Asset;
     use Scandio\lmvc\modules\security\handlers\database\models;
     use Scandio\lmvc\modules\security\Security;
     use Scandio\lmvc\modules\htmltag\Html;
@@ -11,21 +12,21 @@
     <title>Patat</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="<?= $app->image(['favicon.ico']) ?>" type="image/x-icon">
+    <link rel="icon" href="<?= Asset::image(['favicon.ico']) ?>" type="image/x-icon">
 
-    <?= UI::css($app->assets(['bootstrap-theme.css'], [])) ?>
-    <?= UI::css($app->assets(['bootstrap-responsive.css'], [])) ?>
+    <?= UI::css(Asset::assets(['bootstrap-theme.css'], [])) ?>
+    <?= UI::css(Asset::assets(['bootstrap-responsive.css'], [])) ?>
 
-    <?= UI::css($app->assets(['style.css'], [])) ?>
+    <?= UI::css(Asset::assets(['style.css'], [])) ?>
 
     <!-- Library includes -->
-    <?= UI::js($app->assets(['jquery.min.js'], [])) ?>
+    <?= UI::js(Asset::assets(['jquery.min.js'], [])) ?>
 
     <!-- Plugin includes -->
-    <?= UI::js($app->assets(['bootstrap-collapse.js'], [])) ?>
+    <?= UI::js(Asset::assets(['bootstrap-collapse.js'], [])) ?>
 
     <!-- Run includes -->
-    <?= UI::js($app->assets(['config.js', 'main.js'], [])) ?>
+    <?= UI::js(Asset::assets(['config.js', 'main.js'], [])) ?>
 </head>
 <body>
 <div class="outer-wrapper row-fluid">
@@ -33,7 +34,7 @@
         Html::header(['class' => 'row-fluid'],
             Html::div(['class' => 'pitcher'],
                 Html::div(['class' => 'bar-left span2 visible-desktop visible-tablet'],
-                    Html::img(['src' => $app->image(['header-fries.png'])], null)
+                    Html::img(['src' => Asset::image(['header-fries.png'])], null)
                 )
                 .
                 Html::div(['class' => 'bar-middle span8'],
@@ -41,7 +42,7 @@
                 )
                 .
                 Html::div(['class' => 'bar-right span2 visible-desktop visible-tablet'],
-                    Html::img(['src' => $app->image(['header-ketchup.png'])], null)
+                    Html::img(['src' => Asset::image(['header-ketchup.png'])], null)
                 )
             )
         );

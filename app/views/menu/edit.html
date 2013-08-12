@@ -1,5 +1,6 @@
 <?php
     use ui\UI;
+    use Scandio\lmvc\modules\assetpipeline\view\Asset;
 ?>
 
 <div class="row-fluid">
@@ -8,9 +9,9 @@
             <div class="dz-default dz-message">
                 <?php if ($dish->img == null): ?>
                     <span id="no-img">Bild hochladen!</span>
-                    <img width=100 src="<?= $app->image(['uploads', 'placeholder.png']) ?>" alt="" />
+                    <img width=100 src="<?= Asset::image(['uploads', 'placeholder.png']) ?>" alt="" />
                 <?php else: ?>
-                    <img  width=75 height=100 src="<?= $app->image(['uploads', $dish->img], ['w' => 800, 'h' => 600]) ?>" alt="" />
+                    <img  width=75 height=100 src="<?= Asset::image(['uploads', $dish->img], ['w' => 800, 'h' => 600]) ?>" alt="" />
                 <?php endif; ?>
             </div>
         </form>
@@ -30,6 +31,6 @@
     </div>
 </div>
 
-<?= UI::js($app->assets(['dropzone.js'], [])) ?>
-<?= UI::js($app->assets(['views/jquery.menu-edit.js'], [])) ?>
-<?= UI::css($app->assets(['dropzone.css'], [])) ?>
+<?= UI::js(Asset::assets(['dropzone.js'], [])) ?>
+<?= UI::js(Asset::assets(['views/jquery.menu-edit.js'], [])) ?>
+<?= UI::css(Asset::assets(['dropzone.css'], [])) ?>

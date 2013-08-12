@@ -1,5 +1,6 @@
 <?php
     use ui\UI;
+    use Scandio\lmvc\modules\assetpipeline\view\Asset;
 ?>
 
 <table class="table table-striped">
@@ -24,9 +25,9 @@
         <td class=""><?= $dish->id ?></td>
         <td class="hidden-phone hidden-tablet">
             <?php if($dish->img): ?>
-                <img width=100 src="<?= $app->image(['uploads', $dish->img], ['w' => 800, 'h' => 600]) ?>" alt="" />
+                <img width=100 src="<?= Asset::image(['uploads', $dish->img], ['w' => 800, 'h' => 600]) ?>" alt="" />
             <?php else: ?>
-                <img width=100 src="<?= $app->image(['uploads', 'placeholder.png']) ?>" alt="" />
+                <img width=100 src="<?= Asset::image(['uploads', 'placeholder.png']) ?>" alt="" />
             <?php endif; ?>
         </td>
         <td><a href="<?= $app->url('Menu::edit', $dish->id) ?>"><?= $dish->name ?></a></td>
