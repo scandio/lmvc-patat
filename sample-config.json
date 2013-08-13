@@ -4,14 +4,11 @@
     "controllers": ["controllers"],
 
     "modules": [
-        "Scandio\\lmvc\\modules\\less",
-        "Scandio\\lmvc\\modules\\upload",
-        "Scandio\\lmvc\\modules\\sass",
-        "Scandio\\lmvc\\modules\\assetpipeline",
-        "Scandio\\lmvc\\modules\\mustache",
-        "Scandio\\lmvc\\modules\\security",
-        "Scandio\\lmvc\\modules\\registration",
         "Scandio\\lmvc\\modules\\session"
+        "Scandio\\lmvc\\modules\\upload",
+        "Scandio\\lmvc\\modules\\assetpipeline",
+        "Scandio\\lmvc\\modules\\security",
+        "Scandio\\lmvc\\modules\\registration"
     ],
 
     "views": ["./app/views"],
