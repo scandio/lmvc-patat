@@ -8,4 +8,5 @@ require_once('./composer/autoload.php');
 use Scandio\lmvc\LVC;
 
 LVC::initialize('config.json');
+
 LVC::dispatch();

@@ -14,19 +14,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="<?= Asset::image(['favicon.ico']) ?>" type="image/x-icon">
 
-    <?= UI::css(Asset::assets(['bootstrap-theme.css'], [])) ?>
-    <?= UI::css(Asset::assets(['bootstrap-responsive.css'], [])) ?>
+    <?= UI::css(Asset::assets(['bootstrap-theme.css'])) ?>
+    <?= UI::css(Asset::assets(['bootstrap-responsive.css'])) ?>
 
-    <?= UI::css(Asset::assets(['style.css'], [])) ?>
+    <?= UI::css(Asset::assets(['style.css'])) ?>
 
     <!-- Library includes -->
-    <?= UI::js(Asset::assets(['jquery.min.js'], [])) ?>
+    <?= UI::js(Asset::assets(['jquery.min.js'])) ?>
 
     <!-- Plugin includes -->
-    <?= UI::js(Asset::assets(['bootstrap-collapse.js'], [])) ?>
+    <?= UI::js(Asset::assets(['bootstrap-collapse.js'])) ?>
 
     <!-- Run includes -->
-    <?= UI::js(Asset::assets(['config.js', 'main.js'], [])) ?>
+    <?= UI::js(Asset::assets(['config.js', 'main.js'])) ?>
 </head>
 <body>
 <div class="outer-wrapper row-fluid">

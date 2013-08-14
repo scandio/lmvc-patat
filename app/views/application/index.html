@@ -51,6 +51,6 @@
     </div>
 </form>
 
-<?= UI::js(Asset::assets(['polyfills/geolocation.polyfill.js'], [])) ?>
-<?= UI::js(Asset::assets(['plugins/jquery.nominatim.js'], [])) ?>
-<?= UI::js(Asset::assets(['views/application.index-reroute.js', 'jquery.application-index.js'], [])) ?>
+<?= UI::js(Asset::assets(['geolocation.polyfill.js'])) ?>
+<?= UI::js(Asset::assets(['jquery.nominatim.js'])) ?>
+<?= UI::js(Asset::assets(['application.index-reroute.js', 'jquery.application-index.js'])) ?>
