@@ -172,5 +172,5 @@
     </form>
 </div>
 
-<?= UI::js(Asset::assets(['jquery.nominatim.js', 'jquery.handle.js'])) ?>
-<?= UI::js(Asset::assets(['jquery.register.js'])) ?>
+<?= UI::js(Asset::assets(['jquery.nominatim.js', 'jquery.handle.js'], ['path' => 'plugins'])) ?>
+<?= UI::js(Asset::assets(['jquery.register.js'], ['path' => 'views'])) ?>

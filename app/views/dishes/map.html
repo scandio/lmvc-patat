@@ -26,5 +26,5 @@
 <script type="text/javascript" charset="UTF-8" src="http://maps.google.com/maps/api/js?sensor=true"></script>
 
 <?= UI::js(Asset::assets(['gmaps.js'])) ?>
-<?= UI::js(Asset::assets(['plugins/jquery.patatmap.js'], [])) ?>
-<?= UI::js(Asset::assets(['views/jquery.dishes-map.js'], [])) ?>
+<?= UI::js(Asset::assets(['jquery.patatmap.js'], ['path' => 'plugins'])) ?>
+<?= UI::js(Asset::assets(['jquery.dishes-map.js'], ['path' => 'views'])) ?>
