@@ -22,4 +22,4 @@ $(function() {
             $imgTag.attr('src', imgParts.join("/"));
         }
     });
-})
+});
