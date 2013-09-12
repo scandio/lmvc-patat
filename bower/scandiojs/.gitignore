@@ -1,0 +1,11 @@
+/node_modules
+/libs
+/composer
+.DS_Store
+/.idea/
+/composer.phar
+/composer.lock
+*.sublime-project
+*.sublime-workspace
+_SpecRunner.html
+/.grunt

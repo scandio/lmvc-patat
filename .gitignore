@@ -2,8 +2,6 @@ config.json
 .htaccess
 /app/javascripts/config.js
 /.idea/
-/bower/
 /composer/
-/composer.phar
 /composer.lock
 _cache/

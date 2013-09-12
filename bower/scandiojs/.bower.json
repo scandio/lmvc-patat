@@ -1,0 +1,27 @@
+{
+  "name": "scandiojs",
+  "version": "0.1.0",
+  "ignore": [
+    "test",
+    "*.txt",
+    "bower.json"
+  ],
+  "dependencies": {
+    "jquery": "latest"
+  },
+  "devDependencies": {
+    "jasmine": "latest",
+    "requirejs": "latest",
+    "rainbow": "latest"
+  },
+  "homepage": "https://github.com/SEP007/scandiojs",
+  "_release": "0.1.0",
+  "_resolution": {
+    "type": "version",
+    "tag": "0.1.0",
+    "commit": "c3cc16afc7409cc3146fffd31a3adba5f67dc2a1"
+  },
+  "_source": "https://github.com/SEP007/scandiojs.git",
+  "_target": "*",
+  "_originalSource": "https://github.com/SEP007/scandiojs.git"
+}

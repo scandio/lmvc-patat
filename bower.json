@@ -7,6 +7,7 @@
     "normalize.scss": "latest",
     "bootstrap": "~2.3.2",
     "dropzone": "~3.6.1",
-    "gmaps": "https://github.com/HPNeo/gmaps.git#~0.4.4"
+    "gmaps": "https://github.com/HPNeo/gmaps.git#~0.4.4",
+    "scandiojs": "https://github.com/SEP007/scandiojs.git#latest"
   }
 }

@@ -1,0 +1,1 @@
+Scandio.debug.error('Error script loaded!');

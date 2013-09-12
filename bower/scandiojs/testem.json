@@ -1,0 +1,11 @@
+{
+   "framework": "jasmine",
+   "src_files": [
+      "libs/jquery/jquery.js",
+      "libs/requirejs/require.js",
+      "dist/scandio.js",
+      "test/specs/*.js",
+      "test/featurerequests/src/*.js",
+      "test/featurerequests/test/*.js"
+   ]
+}

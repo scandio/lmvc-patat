@@ -1,0 +1,1 @@
+Scandio.debug.log('Log script loaded!');
