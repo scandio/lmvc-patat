@@ -1,4 +1,5 @@
 config.json
+.htaccess
 /app/javascripts/config.js
 /.idea/
 /bower/
