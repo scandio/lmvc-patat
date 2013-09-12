@@ -4,7 +4,7 @@
     "controllers": ["controllers"],
 
     "modules": [
-        "Scandio\\lmvc\\modules\\session"
+        "Scandio\\lmvc\\modules\\session",
         "Scandio\\lmvc\\modules\\upload",
         "Scandio\\lmvc\\modules\\assetpipeline",
         "Scandio\\lmvc\\modules\\security",
