@@ -17,10 +17,7 @@ git submodule foreach --recursive --quiet "git submodule sync --quiet && git sub
 echo "2.) Fetching dependencies…"
 
 echo "2.1.) Composer from composer.json..."
-composer install
-
-echo "2.2.) Bower from bower.json..."
-bower install
+php composer.phar install
 
 if [ "$SET_CHMOD" == true ]
    then
