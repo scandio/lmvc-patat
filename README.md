@@ -26,8 +26,9 @@ LMVC Patat is based upon [LMVC](https://raw.github.com/scandio/lmvc) and more sp
 
 1. Copy the contents of the [sample-config.json](https://github.com/scandio/lmvc-patat/blob/master/sample-config.json) into a file named `config.json` and adjust its values if needed
    - Meaning change database-name and credentials
-2. Lastly copy the contents of the [.-sample-htaccess-file](https://github.com/scandio/lmvc-patat/blob/master/.sample-htaccess) into a new `.htaccess`
+2. Now copy the contents of the [.-sample-htaccess-file](https://github.com/scandio/lmvc-patat/blob/master/.sample-htaccess) into a new `.htaccess`
    - Set the app's root to whereever the app resides on your own *localhost*
+3. Lastly copy the contents of the [/app/javascripts/sample-config.js](https://github.com/scandio/lmvc-patat/blob/master/app/javascripts/sample-config.js) into a new *config.js* and set the app's root to whereever the app resides on your own *localhost* too.
 
 Launch the app in the browser e.g. [localhost/lmvc-patat](http://localhost/lmvc-patat).
 
