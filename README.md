@@ -13,8 +13,22 @@ LMVC Patat is based upon [LMVC](https://raw.github.com/scandio/lmvc) and more sp
 3. Do not forget to import the [database](https://github.com/scandio/lmvc-patat/blob/master/docs/lmvc-patat.sql)
 4. Copy the contents of the [sample-config.json](https://github.com/scandio/lmvc-patat/blob/master/sample-config.json) into a file named *config.json* and adjust its values if needed.
 5. Lastly copy the contents of the [.-sample-htaccess-file](https://github.com/scandio/lmvc-patat/blob/master/.htaccess) into a new *.htaccess* and set the app's root to whereever the app resides on your own *localhost*.
-6. Now run `php composer.phar install` on your terminal and the dependency fetching will begin
-7. Now you can run the app, at least you should be able to
+
+## Setup the database
+
+1. Setup a new database in your own MySQL and select it
+2. Import the security module [database](https://github.com/scandio/lmvc-modules/blob/master/lib/Scandio/lmvc/modules/security/docs/DatabasePrincipal.sql)
+3. Import the patat [database](https://github.com/scandio/lmvc-patat/blob/master/docs/lmvc-patat.sql)
+
+## Setup the app
+
+1. Copy the contents of the [sample-config.json](https://github.com/scandio/lmvc-patat/blob/master/sample-config.json) into a file named `config.json` and adjust its values if needed
+   - Meaning change database-name and credentials
+2. Lastly copy the contents of the [.-sample-htaccess-file](https://github.com/scandio/lmvc-patat/blob/master/.sample-htaccess) into a new `.htaccess`
+   - Set the app's root to whereever the app resides on your own *localhost*
+3. Now run `php composer.phar install` on your terminal and the dependency fetching will begin
+
+Launch the app in the browser e.g. [localhost/lmvc-patat](http://localhost/lmvc-patat).
 
 ## Some screenshots
 
