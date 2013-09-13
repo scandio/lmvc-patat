@@ -17,21 +17,21 @@
 <div class="row-fluid">
     <?php if($error): ?>
     <div class="alert alert-error">
-        <strong>Woopsi!</strong> Es fehlen da noch Daten, bitte alles vollständig ausfüllen!
+        <strong>Woopsi!</strong> You're missing some mandatory data, please add where needed!
     </div>
     <?php elseif($success): ?>
     <div class="alert alert-success">
-        <strong>Sehr gut!</strong> Alles glatt gelaufen, die Bude ist online!
+        <strong>Very goode!</strong> All worked find, your restaurant is online!
     </div>
     <?php endif; ?>
 
     <form id="registration-form" class="form-horizontal" method="POST" action="<?= $app->url('Registration::signup') ?>">
         <fieldset class="span6">
-            <legend>Benutzerdaten</legend>
+            <legend>User data</legend>
             <div class="control-group">
-                <label class="control-label" for="username">Benutzername</label>
+                <label class="control-label" for="username">Username</label>
                 <div class="controls">
-                    <input type="text" name="username" id="username" placeholder="Benutzername" value="<?= $user->username ?>" />
+                    <input type="text" name="username" id="username" placeholder="Username" value="<?= $user->username ?>" />
 
                     <?php foreach ($errors['username'] as $validator => $message): ?>
                         <span class="help-block <?= $validator ?>"><?= $message ?></span>
@@ -39,9 +39,9 @@
                 </div>
             </div>
             <div class="control-group">
-                <label class="control-label" for="password">Passwort</label>
+                <label class="control-label" for="password">Password</label>
                 <div class="controls">
-                    <input type="password" name="password" id="password" placeholder="Passwort"  value="<?= $user->password ?>" />
+                    <input type="password" name="password" id="password" placeholder="Password"  value="<?= $user->password ?>" />
 
                     <?php foreach ($errors['password'] as $validator => $message): ?>
                         <span class="help-block <?= $validator ?>"><?= $message ?></span>
@@ -49,9 +49,9 @@
                 </div>
             </div>
             <div class="control-group">
-                <label class="control-label" for="password">Passwort wiederholen</label>
+                <label class="control-label" for="password">Repeat password</label>
                 <div class="controls">
-                    <input type="password" name="passwordRetyped" id="password-retyped" placeholder="Passwort wiederholen"  value="<?= $user->passwordRetyped ?>" />
+                    <input type="password" name="passwordRetyped" id="password-retyped" placeholder="Repeat password"  value="<?= $user->passwordRetyped ?>" />
 
                     <?php foreach ($errors['passwordRetyped'] as $validator => $message): ?>
                         <span class="help-block <?= $validator ?>"><?= $message ?></span>
@@ -59,9 +59,9 @@
                 </div>
             </div>
             <div class="control-group">
-                <label class="control-label" for="username">Vor- & Nachname</label>
+                <label class="control-label" for="username">First- & Surname</label>
                 <div class="controls">
-                    <input type="text" name="fullname" id="fullname" placeholder="Vor- & Nachname" value="<?= $user->fullname ?>" />
+                    <input type="text" name="fullname" id="fullname" placeholder="First- & Surname" value="<?= $user->fullname ?>" />
                 </div>
             </div>
             <div class="control-group">
@@ -75,25 +75,25 @@
                 </div>
             </div>
             <div class="control-group">
-                <label class="control-label" for="password">Telefon</label>
+                <label class="control-label" for="password">Phone</label>
                 <div class="controls">
-                    <input type="tel" name="phone" id="phone" placeholder="Telefon"  value="<?= $user->phone ?>" />
+                    <input type="tel" name="phone" id="phone" placeholder="Phone"  value="<?= $user->phone ?>" />
                 </div>
             </div>
             <div class="control-group">
-                <label class="control-label" for="password">Mobil</label>
+                <label class="control-label" for="password">Mobile</label>
                 <div class="controls">
-                    <input type="tel" name="mobile" id="mobile" placeholder="Mobil"  value="<?= $user->mobile ?>" />
+                    <input type="tel" name="mobile" id="mobile" placeholder="Mobile"  value="<?= $user->mobile ?>" />
                 </div>
             </div>
         </fieldset>
 
         <fieldset class="span6">
-            <legend>Dein Standort</legend>
+            <legend>Your restaurant</legend>
             <div class="control-group">
-                <label class="control-label" for="restaurant">Name Ihrer Lokalität</label>
+                <label class="control-label" for="restaurant">Name of restaurant</label>
                 <div class="controls">
-                    <input type="text" name="restaurant" id="restaurant" placeholder="Name Ihrer Lokalität"  value="<?= $user->restaurant ?>" />
+                    <input type="text" name="restaurant" id="restaurant" placeholder="Name of restaurant" value="<?= $user->restaurant ?>" />
 
                     <?php foreach ($errors['restaurant'] as $validator => $message): ?>
                         <span class="help-block <?= $validator ?>"><?= $message ?></span>
@@ -101,23 +101,22 @@
                 </div>
             </div>
             <div class="control-group">
-                <label class="control-label" for="handle">Domain Ihrer Lokalität</label>
+                <label class="control-label" for="handle">Domain for restaurant</label>
                 <div class="controls">
-                    <input type="text" name="handle" id="handle" placeholder="Ihre Domain" value="<?= $user->handle ?>" />
+                    <input type="text" name="handle" id="handle" placeholder="Domain for restaurant" value="<?= $user->handle ?>" />
                     <div id="handle-response-indicator" class="input-append">
-                        <span class="add-on">✗</span>
+                        <span class="add-on">✔</span>
                     </div>
                     <?php foreach ($errors['handle'] as $validator => $message): ?>
                         <span class="help-block <?= $validator ?>"><?= $message ?></span>
                     <?php endforeach ?>
-
-                    <span class="help-block">www.snackfinder.de/imbiss/<?= $user->handle ?></span>
+                    <span class="help-block">www.sep007.tdeekens.name/imbiss/<?= $user->handle ?></span>
                 </div>
             </div>
             <div class="control-group">
-                <label class="control-label" for="city">Stadt</label>
+                <label class="control-label" for="city">City</label>
                 <div class="controls">
-                    <input type="text" name="city" id="city" placeholder="Stadt"  value="<?= $user->city ?>" />
+                    <input type="text" name="city" id="city" placeholder="City" value="<?= $user->city ?>"/>
 
                     <?php foreach ($errors['city'] as $validator => $message): ?>
                         <span class="help-block <?= $validator ?>"><?= $message ?></span>
@@ -125,9 +124,9 @@
                 </div>
             </div>
             <div class="control-group">
-                <label class="control-label" for="zip">Postleitzahl</label>
+                <label class="control-label" for="zip">Zip</label>
                 <div class="controls">
-                    <input type="number" name="zip" id="zip" placeholder="Postleitzahl"  value="<?= $user->zip ?>" />
+                    <input type="number" name="zip" id="zip" placeholder="Zip" value="<?= $user->zip ?>"/>
 
                     <?php foreach ($errors['zip'] as $validator => $message): ?>
                         <span class="help-block <?= $validator ?>"><?= $message ?></span>
@@ -135,32 +134,31 @@
                 </div>
             </div>
             <div class="control-group">
-                <label class="control-label" for="place">Straße</label>
+                <label class="control-label" for="place">Street & Housenumber</label>
                 <div class="controls">
-                    <input type="text" name="place" id="place" placeholder="Straße & Hausnummer"  value="<?= $user->place ?>" />
+                    <input type="text" name="place" id="place" placeholder="Street & Housenumber" value="<?= $user->street ?>"/>
 
                     <?php foreach ($errors['place'] as $validator => $message): ?>
-                    <span class="help-block <?= $validator ?>"><?= $message ?></span>
+                        <span class="help-block <?= $validator ?>"><?= $message ?></span>
                     <?php endforeach ?>
                 </div>
             </div>
             <div class="control-group">
-                <label class="control-label" for="place">Ort suchen</label>
+                <label class="control-label" for="place">Find your location</label>
                 <div class="controls">
                     <a id="search-long-lat" class="btn btn-small" href="#"><i class="icon-search"></i></a>
                 </div>
             </div>
             <div class="control-group">
-                <label class="control-label" for="place">Längengrad</label>
+                <label class="control-label" for="place">Longitude</label>
                 <div class="controls">
-                    <input type="text" name="longitude" id="longitude" placeholder="Längengrad"  value="<?= $user->longitude ?>" />
+                    <input type="text" name="longitude" id="longitude" placeholder="Longitude" />
                 </div>
             </div>
             <div class="control-group">
-                <label class="control-label" for="latitude">Breitengrad</label>
+                <label class="control-label" for="latitude">Latitude</label>
                 <div class="controls">
-                    <input type="text" name="latitude" id="latitude" placeholder="Breitengrad"  value="<?= $user->latitude ?>" />
-
+                    <input type="text" name="latitude" id="latitude" placeholder="Latitude" />
                 </div>
             </div>
         </fieldset>

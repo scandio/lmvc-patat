@@ -8,7 +8,7 @@
         <form action="<?= $app->url('Upload::img', 'sha1') ?>" class="dropzone dz-clickable" id="image-upload">
             <div class="dz-default dz-message">
                 <?php if ($dish->img == null): ?>
-                    <span id="no-img">Bild hochladen!</span>
+                    <span id="no-img">Upload image!</span>
                     <img width=100 src="<?= Asset::image(['uploads', 'placeholder.png']) ?>" alt="" />
                 <?php else: ?>
                     <img  width=75 height=100 src="<?= Asset::image(['uploads', $dish->img], ['w' => 800, 'h' => 600]) ?>" alt="" />

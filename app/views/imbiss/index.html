@@ -19,7 +19,7 @@
 <div class="ios-list-wrap">
     <div class="patat-list">
         <dl>
-            <dt>Aktuelle Angebote</dt>
+            <dt>Current offers</dt>
 
             <?php if (count($advertisedDishes) > 0): ?>
             <?php foreach($advertisedDishes as $advertisedDish): ?>
@@ -47,7 +47,7 @@
             <?php endforeach; ?>
             <?php else: ?>
             <div class="alert alert-info">
-                <strong>Sorry,</strong> es gibt leider keine aktuellen Angebote!
+                <strong>Sorry,</strong> we don't have any offers at the moment!
             </div>
             <?php endif; ?>
         </dl>
@@ -71,7 +71,7 @@
 
     <div class="patat-list">
         <dl>
-            <dt>Weitere Snacks</dt>
+            <dt>More snacks</dt>
 
             <?php if (count($unadvertisedDishes) > 0): ?>
                 <?php foreach($unadvertisedDishes as $dish): ?>
@@ -99,7 +99,7 @@
                 <?php endforeach; ?>
             <?php else: ?>
                 <div class="alert alert-info">
-                    <strong>Sorry,</strong> es gibt leider keine weiteren Snacks!
+                    <strong>Sorry,</strong> we don't have any snacks listed!
                 </div>
             <?php endif; ?>
         </dl>

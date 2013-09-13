@@ -7,13 +7,13 @@
     <thead>
         <tr>
             <th class="">#</th>
-            <th class="hidden-phone hidden-tablet">Bild</th>
+            <th class="hidden-phone hidden-tablet">Image</th>
             <th>Name</th>
-            <th class="hidden-phone">Beschreibung</th>
-            <th class="">Preis</th>
+            <th class="hidden-phone">Description</th>
+            <th class="">Price</th>
             <th></th>
             <th>
-                <a class="btn btn-small btn-block" href="<?= $app->url('Menu::edit') ?>" title="Neues Gericht hinzufügen">
+                <a class="btn btn-small btn-block" href="<?= $app->url('Menu::edit') ?>" title="Add new snack">
                     <span class="icon-plus-sign icon-black"></span>
                 </a>
             </th>
@@ -36,12 +36,12 @@
         <td><?= UI::checkbox('advertised', null, (bool) $dish->advertised, 'Ja', null, true) ?></td>
         <td>
             <div class="btn-group">
-                <a class="btn btn-mini" href="<?= $app->url('Menu::edit', $dish->id) ?>" title="Gericht editieren">
+                <a class="btn btn-mini" href="<?= $app->url('Menu::edit', $dish->id) ?>" title="Edit snack">
                     <span class="icon-edit"></span>
                     <span class="hidden-phone"></span>
                 </a>
                 <a class="btn btn-mini btn-danger" href="<?= $app->url('Menu::delete', $dish->id) ?>"
-                   title="Gericht löschen">
+                   title="Delete snack">
                     <span class="icon-trash icon-white"></span>
                 </a>
             </div>

@@ -5,31 +5,31 @@
 
 <?php if($failure): ?>
     <div class="alert alert-error">
-        <strong>Oh no!</strong> Login fehlgeschlagen, falsche Benutzerdaten?
+        <strong>Oh no!</strong> Login failed. Mistyped something here?
     </div>
 <?php endif; ?>
 
 <form class="form-horizontal" method="POST" action="<?= $app->url('Security::login') ?>">
     <fieldset>
-        <legend>Log dich ein…</legend>
+        <legend>Log yerself in!</legend>
         <div class="control-group">
-            <label class="control-label" for="username">Benutzername</label>
+            <label class="control-label" for="username">Username</label>
             <div class="controls">
-                <input type="text" name="username" id="username" placeholder="Benutzername"/>
+                <input type="text" name="username" id="username" placeholder="Username"/>
             </div>
         </div>
         <div class="control-group">
-            <label class="control-label" for="password">Passwort</label>
+            <label class="control-label" for="password">Password</label>
             <div class="controls">
-                <input type="password" name="password" id="password" placeholder="Passwort"/>
+                <input type="password" name="password" id="password" placeholder="Password"/>
             </div>
         </div>
         <div class="control-group">
             <input class="btn btn-primary" type="submit" id="login" name="login" value="Login"/>
 
-            <a class="btn" href="<?= $app->url('Registration::index') ?>">Anmelden</a>
+            <a class="btn" href="<?= $app->url('Registration::index') ?>">To signup</a>
 
-            <a class="btn" href="<?= $app->url('Application::index') ?>">Doch nicht…</a>
+            <a class="btn" href="<?= $app->url('Application::index') ?>">Go back</a>
         </div>
     </fieldset>
 </form>

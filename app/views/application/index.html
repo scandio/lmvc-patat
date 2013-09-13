@@ -3,51 +3,51 @@
     use Scandio\lmvc\modules\assetpipeline\view\Asset;
 ?>
 
-<h2>Wir versuchen deinen Ort zu bestimmen!</h2>
+<h2>We're trying to locate you, stay put!</h2>
 
-<h3>…oder geben Sie Ihre Adresse an.</h3>
+<h3>…you can also specify your adress</h3>
 <form id="location-form" class="form-horizontal" method="POST" action="<?= $app->url('Dishes::index') ?>">
     <fieldset>
         <div class="control-group">
-            <label class="control-label" for="city">Stadt</label>
+            <label class="control-label" for="city">City</label>
             <div class="controls">
-                <input type="text" name="city" id="city" placeholder="Stadt" />
+                <input type="text" name="city" id="city" placeholder="City" />
             </div>
         </div>
         <div class="control-group">
-            <label class="control-label" for="zip">Postleitzahl</label>
+            <label class="control-label" for="zip">Zip</label>
             <div class="controls">
-                <input type="number" name="zip" id="zip" placeholder="Postleitzahl" />
+                <input type="number" name="zip" id="zip" placeholder="Zip" />
             </div>
         </div>
         <div class="control-group">
-            <label class="control-label" for="place">Straße & Hausnummer</label>
+            <label class="control-label" for="place">Street & Housenumber</label>
             <div class="controls">
-                <input type="text" name="place" id="place" placeholder="Straße & Hausnummer" />
+                <input type="text" name="place" id="place" placeholder="Street & Housenumber" />
             </div>
         </div>
         <div class="control-group">
-            <label class="control-label" for="place">Ort suchen</label>
+            <label class="control-label" for="place">Find me</label>
             <div class="controls">
                 <a id="search-long-lat" class="btn btn-primary btn-big" href="#"><i class="icon-search icon-white"></i></a>
             </div>
         </div>
         <div class="control-group">
-            <label class="control-label" for="longitude">Längengrad</label>
+            <label class="control-label" for="longitude">Longitude</label>
             <div class="controls">
-                <input type="text" name="longitude" id="longitude" placeholder="Längengrad" />
+                <input type="text" name="longitude" id="longitude" placeholder="Longitude" />
             </div>
         </div>
         <div class="control-group">
-            <label class="control-label" for="latitude">Breitengrad</label>
+            <label class="control-label" for="latitude">Latitude</label>
             <div class="controls">
-                <input type="text" name="latitude" id="latitude" placeholder="Breitengrad" />
+                <input type="text" name="latitude" id="latitude" placeholder="Latitude" />
             </div>
         </div>
     </fieldset>
 
     <div class="control-group">
-        <button class="btn btn-primary" type="submit" id="signup" name="signup">Finde Patat!</button>
+        <button class="btn btn-primary" type="submit" id="signup" name="signup">Find Patat!</button>
     </div>
 </form>
 
