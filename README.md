@@ -13,6 +13,8 @@ LMVC Patat is based upon [LMVC](https://raw.github.com/scandio/lmvc) and more sp
 3. Do not forget to import the [database](https://github.com/scandio/lmvc-patat/blob/master/docs/lmvc-patat.sql)
 4. Copy the contents of the [sample-config.json](https://github.com/scandio/lmvc-patat/blob/master/sample-config.json) into a file named *config.json* and adjust its values if needed.
 5. Lastly copy the contents of the [.-sample-htaccess-file](https://github.com/scandio/lmvc-patat/blob/master/.htaccess) into a new *.htaccess* and set the app's root to whereever the app resides on your own *localhost*.
+6. Now run `php composer.phar install` on your terminal and the dependency fetching will begin
+7. Now you can run the app, at least you should be able to
 
 ## Some screenshots
 
