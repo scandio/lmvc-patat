@@ -2,13 +2,14 @@
     var pluginName = "nominatim",
         defaults = {
             nominatimUrlInto: "http://nominatim.openstreetmap.org/",
-            nominatimUrlOutro: "/?format=json&polygon=0&addressdetails=0",
+            nominatimUrlOutro: "&format=json&polygon=0&addressdetails=0",
             searchBtn: "#search-long-lat",
             resultElems: {
                 latitude: "#latitude",
                 longitude: "#longitude"
             },
             inputElems: {
+                country: "#country",
                 city: "#city",
                 zip: '#zip',
                 place: '#place'
@@ -32,6 +33,7 @@
         },
         cacheElems: function() {
             this.cachedElems = {
+                country: this.$element.find(this.settings.inputElems.country),
                 zip: this.$element.find(this.settings.inputElems.zip),
                 city: this.$element.find(this.settings.inputElems.city),
                 place: this.$element.find(this.settings.inputElems.place),
@@ -73,13 +75,14 @@
             });
         },
         parseLongLatUrl: function (params) {
-            return this.settings.nominatimUrlInto + "search/de/" + params.zip + "/" + params.city + "/" + params.place + this.settings.nominatimUrlOutro;
+            return this.settings.nominatimUrlInto + "search/?q=" + params.country + "," + params.zip + " " + params.city + "," + params.place + this.settings.nominatimUrlOutro;
         },
         parseAddressUrl: function () {
             return this.settings.nominatimUrlInto + "/reverse";
         },
         getParams: function () {
             return {
+                country: this.cachedElems.country.val(),
                 zip: this.cachedElems.zip.val(),
                 city: this.cachedElems.city.val(),
                 place: this.cachedElems.place.val()
