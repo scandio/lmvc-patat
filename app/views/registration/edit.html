@@ -8,6 +8,7 @@
     $errors['email'] = $errors['email'] ?: [];
 
     $errors['restaurant'] = $errors['restaurant'] ?: [];
+    $errors['country'] = $errors['country'] ?: [];
     $errors['city'] = $errors['city'] ?: [];
     $errors['zip'] = $errors['zip'] ?: [];
     $errors['place'] = $errors['place'] ?: [];
@@ -111,6 +112,16 @@
                         <span class="help-block <?= $validator ?>"><?= $message ?></span>
                     <?php endforeach ?>
                     <span class="help-block">www.sep007.tdeekens.name/imbiss/<?= $user->handle ?></span>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="city">Country</label>
+                <div class="controls">
+                    <input type="text" name="country" id="country" placeholder="Country" value="<?= $user->country ?>"/>
+
+                    <?php foreach ($errors['country'] as $validator => $message): ?>
+                        <span class="help-block <?= $validator ?>"><?= $message ?></span>
+                    <?php endforeach ?>
                 </div>
             </div>
             <div class="control-group">
