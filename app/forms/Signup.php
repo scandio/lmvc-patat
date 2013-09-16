@@ -7,36 +7,36 @@ use Scandio\lmvc\modules\registration\forms;
 class Signup extends forms\Signup
 {
     public $restaurant = [
-        'mandatory' => ['message' => 'Der Name ihrer Lokalität ist ein Pflichtfeld!'],
+        'mandatory' => ['message' => 'A name for your restaurant is compulsory!'],
     ];
     public $city = [
-        'mandatory' => ['message' => 'Die Stadt ist Pflichtfeld!']
+        'mandatory' => ['message' => 'Type a city please!']
     ];
     public $zip = [
-        'mandatory' => ['message' => 'Eine Postleitzahl wird noch benötigt!']
+        'mandatory' => ['message' => 'The zip code is needed!']
     ];
     public $place = [
-        'mandatory' => ['message' => 'Die Straße- und Hausnummer sind verpflichtend!']
+        'mandatory' => ['message' => 'Mandatory field missing here!']
     ];
     public $username = [
-        'check-username' => ['message' => 'Der Benutzername: "%s" ist etwas kurz!'],
-        'mandatory' => ['message' => 'Bitte einen Benutzername angeben!']
+        'check-username' => ['message' => 'That username: "%s" is too short!'],
+        'mandatory' => ['message' => 'Please give us a username!']
     ];
     public $email = [
-        'check-email' => ['message' => 'Die E-Mail: "%s" ist nicht gültig!'],
-        'mandatory' => ['message' => 'Bitte eine E-Mail angeben!!']
+        'check-email' => ['message' => 'The E-Mail: "%s" ain\'t valid!'],
+        'mandatory' => ['message' => 'Please give us an E-Mail!']
     ];
     public $password = [
-        'check-password' => ['message' => 'Das Passwort ist zu schwach!'],
-        'mandatory' => ['message' => 'Später einloggen ohne Passwort: interesante Idee!']
+        'check-password' => ['message' => 'Holy, too weak that password is!'],
+        'mandatory' => ['message' => 'Those passwords don\'t match, try again!']
     ];
     public $passwordRetyped = [
-        'mandatory' => ['message' => 'Bitte das Passwort zweimal eingeben!'],
-        'check-password-retyped' => ['message' => 'Die Passwörter stimmen nicht überein!']
+        'mandatory' => ['message' => 'For you own sake: retype the password!'],
+        'check-password-retyped' => ['message' => 'Nope, these two passwords do not match!']
     ];
     public $handle = [
-        'mandatory' => ['message' => 'Bitte eine Url wählen!'],
-        'check-handle' => ['message' => 'Die Url wird bereits verwendet oder ist zu kurz:']
+        'mandatory' => ['message' => 'Please pick a url, its your address!'],
+        'check-handle' => ['message' => 'This url is too short!']
     ];
 
     protected function checkHandle($name)

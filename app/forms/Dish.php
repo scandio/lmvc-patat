@@ -7,15 +7,15 @@ use Scandio\lmvc\modules\form\Form;
 class Dish extends Form
 {
     public $name = [
-        'mandatory' => ['message' => 'Name ist ein Pflichtfeld!']
+        'mandatory' => ['message' => 'We need your name!']
     ];
     public $description = [
-        'check-description' => ['message' => 'Die Bescheibung "%s" ist etwas kurz!'],
-        'mandatory' => ['message' => 'Eine Beschreibung ist verpflichtend!']
+        'check-description' => ['message' => 'Your description: "%s" seems too short!'],
+        'mandatory' => ['message' => 'Well, we need a description!']
     ];
     public $price = [
-        'mandatory' => ['message' => 'Der Preis ist ein Pflichtfeld!'],
-        'check-price' => ['message' => 'Der Preis ist nicht gültig!']
+        'mandatory' => ['message' => 'You might want to add a price!'],
+        'check-price' => ['message' => 'We figured that this is not a valid price!']
     ];
 
     protected function checkDescription($name)
