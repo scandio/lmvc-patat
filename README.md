@@ -8,7 +8,7 @@ A small little app suggesting fast food restaurant within walking distance to a 
 
 LMVC Patat is based upon [LMVC](https://raw.github.com/scandio/lmvc) and more specifically [LMVC Afresh](https://github.com/scandio/lmvc-afresh).
 
-1. To install your own version just clone the repo `git clone https://github.com/scandio/lmvc-patat.git`.
+1. To install your own version just clone the repo `git clone https://github.com/sep007/lmvc-patat.git`.
 2. Then `cd lmvc-patat && sh bootstrap.sh`. This will load all *bower* and *composer* dependencies and setup caching-directories for the [Asset Pipeline](https://github.com/scandio/lmvc-modules/tree/master/lib/Scandio/lmvc/modules/assetpipeline).
 3. Do not forget to import the [database](https://github.com/scandio/lmvc-patat/blob/master/docs/lmvc-patat.sql)
 4. Copy the contents of the [sample-config.json](https://github.com/scandio/lmvc-patat/blob/master/sample-config.json) into a file named *config.json* and adjust its values if needed.
