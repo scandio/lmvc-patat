@@ -8,25 +8,27 @@ A small little app suggesting fast food restaurant within walking distance to a 
 
 LMVC Patat is based upon [LMVC](https://raw.github.com/SEP007/lmvc) and more specifically [LMVC Afresh](https://github.com/scandio/lmvc-afresh).
 
-1. To install your own version just clone the repo `git clone https://github.com/sep007/lmvc-patat.git`.
-2. Then `cd lmvc-patat && sh bootstrap.sh`. This will load all *bower* and *composer* dependencies and setup caching-directories for the [Asset Pipeline](https://github.com/SEP007/lmvc-modules/tree/master/lib/Scandio/lmvc/modules/assetpipeline).
-4. Copy the contents of the [sample-config.json](https://github.com/SEP007/lmvc-patat/blob/master/sample-config.json) into a file named *config.json* and adjust its values if needed.
-5. Now copy the contents of the [.sample-htaccess-file](https://github.com/SEP007/lmvc-patat/blob/master/.sample-htaccess) into a new *.htaccess* and set the app's root to whereever the app resides on your own *localhost*.
-6. Lastly copy the contents of the [/app/javascripts/sample-config.js](https://github.com/SEP007/lmvc-patat/blob/master/app/javascripts/sample-config.js) into a new *config.js* and set the app's root to whereever the app resides on your own *localhost* too.
+### Download and Config Setup
 
-## Setup the database
+1. Clone and move into the folder from command line:
+   - `git clone https://github.com/SEP007/lmvc-patat.git`
+   - `cd lmvc-patat`
+2. Copy the contents of the [sample-config.json](https://github.com/SEP007/lmvc-patat/blob/master/sample-config.json) into a new file named `config.json` and adjust its values if needed
+   - Meaning change database-name and credentials
+2. Now copy the contents of the [.-sample-htaccess-file](https://github.com/SEP007/lmvc-patat/blob/master/.sample-htaccess) into a new `.htaccess`
+   - Set the app's root to whereever the app resides on your own *localhost's* htdocs
+4. Lastly copy the contents of the [/app/javascripts/sample-config.js](https://github.com/SEP007/lmvc-patat/blob/master/app/javascripts/sample-config.js) into a new *config.js* and set the app's root to whereever the app resides on your own *localhost* too (e.g. just `lmvc-patat`.
+
+### Setup the Database
 
 1. Setup a new database in your own MySQL and select it
-2. Import the security module [database](https://github.com/SEP007/lmvc-modules/blob/master/lib/Scandio/lmvc/modules/security/docs/DatabasePrincipal.sql)
-3. Import the patat [database](https://github.com/SEP007/lmvc-patat/blob/master/docs/lmvc-patat.sql)
+   - When you're using MAMP this is typically done on your *localhost* with *phymyadmin* as a front-end for your database
+2. Import the security module's [database](https://github.com/SEP007/lmvc-modules/blob/master/lib/Scandio/lmvc/modules/security/docs/DatabasePrincipal.sql)
+3. Import patat's [database](https://github.com/SEP007/lmvc-patat/blob/master/docs/lmvc-patat.sql)
 
-## Setup the app
+### Install the Dependencies
 
-1. Copy the contents of the [sample-config.json](https://github.com/SEP007/lmvc-patat/blob/master/sample-config.json) into a file named `config.json` and adjust its values if needed
-   - Meaning change database-name and credentials
-2. Lastly copy the contents of the [.-sample-htaccess-file](https://github.com/SEP007/lmvc-patat/blob/master/.sample-htaccess) into a new `.htaccess`
-   - Set the app's root to whereever the app resides on your own *localhost*
-3. Now run `sh bootstrap.sh` on your terminal *in the patat-folder* and the dependency fetching will begin
+1. Now run `sh bootstrap.sh` on your terminal *in the patat-folder* and the dependency fetching will begin
 
 Launch the app in the browser e.g. [localhost/lmvc-patat](http://localhost/lmvc-patat).
 
