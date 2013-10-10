@@ -9,7 +9,7 @@ fi
 
 echo "# Bootstrapping your project..."
 
-echo "1.) Updating submodules if existent…"
+echo "1.) Updating submodules if existent..."
 git submodule sync --quiet || exit $?
 git submodule update --init || exit $?
 git submodule foreach --recursive --quiet "git submodule sync --quiet && git submodule update --init" || exit $?
@@ -30,4 +30,4 @@ else
       echo "3.) NOT setting any chmods for caching directories..."
 fi
 
-echo "# Done: Code away!"
+echo "# Done: Boostrap all good!"

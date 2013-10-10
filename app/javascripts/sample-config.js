@@ -1,3 +1,3 @@
 window.lmvcConfig = {
-    appDir: 'LMVC/lmvc-patat'
+    appDir: 'lmvc-patat'
 }
