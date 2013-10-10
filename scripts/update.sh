@@ -10,6 +10,6 @@ git submodule foreach --recursive --quiet "git submodule sync --quiet && git sub
 echo "2.) Updating dependencies…"
 
 echo "2.1.) Composer from composer.json..."
-php composer.phar install
+php composer.phar update
 
 echo "# Done: Code on!"
