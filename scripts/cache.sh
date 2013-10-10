@@ -4,7 +4,7 @@ if [[ $action = "clear" ]]; then
 
    if [[ "$2" != "" ]]
       then
-         CACHE_PREFIX=$1
+         CACHE_PREFIX=$2
       else
          CACHE_PREFIX="app"
    fi
