@@ -29,4 +29,4 @@ cp app/javascripts/sample-config.js app/javascripts/config.js
 echo "3.) Calling bootstrap.sh..."
 sh scripts/bootstrap.sh
 
-echo "# Done: Digg setup the rest!"
+echo "# Done: Setup the rest!"

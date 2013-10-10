@@ -8,16 +8,15 @@ A small little app suggesting fast food restaurant within walking distance to a 
 
 LMVC Patat is based upon [LMVC](https://raw.github.com/SEP007/lmvc) and more specifically [LMVC Afresh](https://github.com/scandio/lmvc-afresh).
 
-### Download and Config Setup
+### Download and setup work
 
-1. Clone and move into the folder from command line:
-   - `git clone https://github.com/SEP007/lmvc-patat.git`
-   - `cd lmvc-patat`
-2. Copy the contents of the [sample-config.json](https://github.com/SEP007/lmvc-patat/blob/master/sample-config.json) into a new file named `config.json` and adjust its values if needed
-   - Meaning change database-name and credentials
-2. Now copy the contents of the [.-sample-htaccess-file](https://github.com/SEP007/lmvc-patat/blob/master/.sample-htaccess) into a new `.htaccess`
-   - Set the app's root to whereever the app resides on your own *localhost's* htdocs
-4. Lastly copy the contents of the [/app/javascripts/sample-config.js](https://github.com/SEP007/lmvc-patat/blob/master/app/javascripts/sample-config.js) into a new *config.js* and set the app's root to whereever the app resides on your own *localhost* too (e.g. just `lmvc-patat`.
+As I expect you to be on a Unix system, all you need is one fancy command downloading a bash-file which does all the work.
+If you're on Windows you need to clone, setup chmods, fetch dependencies and move sample-config file's content around yourself. It's what you deserve for it anyways ;-)
+
+So if you're on Unix run this:
+`bash -c "$(curl -fsSL http://git.io/xzIkXA)"`
+
+Kaboom! Hope it went well...
 
 ### Setup the Database
 
@@ -25,10 +24,9 @@ LMVC Patat is based upon [LMVC](https://raw.github.com/SEP007/lmvc) and more spe
    - When you're using MAMP this is typically done on your *localhost* with *phymyadmin* as a front-end for your database
 2. Import the security module's [database](https://github.com/SEP007/lmvc-modules/blob/master/lib/Scandio/lmvc/modules/security/docs/DatabasePrincipal.sql)
 3. Import patat's [database](https://github.com/SEP007/lmvc-patat/blob/master/docs/lmvc-patat.sql)
+4. Adjust database credentials in app's `config.js`
 
-### Install the Dependencies
-
-1. Now run `sh bootstrap.sh` on your terminal *in the patat-folder* and the dependency fetching will begin
+### Run it
 
 Launch the app in the browser e.g. [localhost/lmvc-patat](http://localhost/lmvc-patat).
 

@@ -30,4 +30,4 @@ else
       echo "3.) NOT setting any chmods for caching directories..."
 fi
 
-echo "# Done: Boostrap all good!"
+echo "# Done: Bootstrap all good!"
