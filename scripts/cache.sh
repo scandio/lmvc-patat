@@ -29,5 +29,5 @@ if [[ $action = "clear" ]]; then
    rm -rf $CACHE_PREFIX/markdown/_cache/*
    echo "5.) Flushed markdown cache"
 else
-   echo "Command '$ACTION' unknown.";
+   echo "Command '$action' unknown.";
 fi
