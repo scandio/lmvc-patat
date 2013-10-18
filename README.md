@@ -1,3 +1,7 @@
+[![Build Status](https://travis-ci.org/SEP007/lmvc-patat.png)](https://travis-ci.org/SEP007/lmvc-patat)
+[![Coverage Status](https://coveralls.io/repos/SEP007/lmvc-patat/badge.png)](https://coveralls.io/r/SEP007/lmvc-patat)
+[![Dependency Status](https://www.versioneye.com/user/projects/5260ffb2632bac5cff0004ac/badge.png)](https://www.versioneye.com/user/projects/5260ffb2632bac5cff0004ac)
+
 # LMVC Patat (Find a snack)
 
 LMVC Patat is a small app built using the LMVC Framework and its modules.
