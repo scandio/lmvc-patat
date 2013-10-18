@@ -5,3 +5,7 @@ config.json
 /composer/
 /composer.lock
 _cache/
+/tests/lib/
+/tests/logs/*
+!/tests/logs/.gitkeep
+/bin/
