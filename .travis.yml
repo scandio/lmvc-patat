@@ -1,7 +1,7 @@
 notifications:
   email: false
   hipchat:
-    - secure: "M5h6CECmeoJgmcpJIH7P8BloqWyQjFwaKdd1qeA74ZsEY3MvwEMGy9VrQI2svZ54TKQKZHAADqS70f2IdjkMZIiJUB0VnkGt4adbp65Jb2WanEQzUd6zt/BZYBzXtjdUtx+OjEwMZAPeBE1dq3vyx4bb8wZt4j1VtlPovpzEssw="
+    - secure: "YUGL3bfbqiWD63/FwtptcuzSM+jxjvO6JaK0if1aP2p/+WhXJ5reBoSPUqDbEy8OKzHPeLPKB2xwbYSke6aC6ozxeJLUAt5e2ibgeOudp0f87Hak7pGt/XVOaWLdCJoOpaTTDunIlTawWpe1ICwZemjDsuG+I4lKYni/O13OzZE="
 language: php
 php:
   - 5.4
