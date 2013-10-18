@@ -5,3 +5,4 @@ config.json
 /composer/
 /composer.lock
 _cache/
+/bin/
