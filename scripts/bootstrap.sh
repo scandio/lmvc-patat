@@ -9,7 +9,7 @@ fi
 
 echo "# Bootstrapping your project..."
 
-echo "1.) Updating submodules if existent…"
+echo "1.) Updating submodules if existent..."
 git submodule sync --quiet || exit $?
 git submodule update --init || exit $?
 git submodule foreach --recursive --quiet "git submodule sync --quiet && git submodule update --init" || exit $?
@@ -17,7 +17,7 @@ git submodule foreach --recursive --quiet "git submodule sync --quiet && git sub
 echo "2.) Fetching dependencies…"
 
 echo "2.1.) Composer from composer.json..."
-php composer.phar install
+php composer.phar install --dev
 
 if [ "$SET_CHMOD" == true ]
    then
@@ -26,8 +26,10 @@ if [ "$SET_CHMOD" == true ]
       chmod 0777 app/javascripts/_cache
       chmod 0777 app/img/_cache
       chmod 0777 app/styles/_cache
+      chmod 0777 app/fonts/_cache
+      chmod 0777 app/markdown/_cache
 else
       echo "3.) NOT setting any chmods for caching directories..."
 fi
 
-echo "# Done: Code away!"
+echo "# Done: Bootstrap all good!"

@@ -1,3 +1,7 @@
+[![Build Status](https://travis-ci.org/SEP007/lmvc-patat.png)](https://travis-ci.org/SEP007/lmvc-patat)
+[![Coverage Status](https://coveralls.io/repos/SEP007/lmvc-patat/badge.png)](https://coveralls.io/r/SEP007/lmvc-patat)
+[![Dependency Status](https://www.versioneye.com/user/projects/5260ffb2632bac5cff0004ac/badge.png)](https://www.versioneye.com/user/projects/5260ffb2632bac5cff0004ac)
+
 # LMVC Patat (Find a snack)
 
 LMVC Patat is a small app built using the LMVC Framework and its modules.
@@ -6,28 +10,27 @@ A small little app suggesting fast food restaurant within walking distance to a 
 
 ## Install LMVC Patat
 
-LMVC Patat is based upon [LMVC](https://raw.github.com/scandio/lmvc) and more specifically [LMVC Afresh](https://github.com/scandio/lmvc-afresh).
+LMVC Patat is based upon [LMVC](https://raw.github.com/SEP007/lmvc) and more specifically [LMVC Afresh](https://github.com/scandio/lmvc-afresh).
 
-1. To install your own version just clone the repo `git clone https://github.com/sep007/lmvc-patat.git`.
-2. Then `cd lmvc-patat && sh bootstrap.sh`. This will load all *bower* and *composer* dependencies and setup caching-directories for the [Asset Pipeline](https://github.com/scandio/lmvc-modules/tree/master/lib/Scandio/lmvc/modules/assetpipeline).
-3. Do not forget to import the [database](https://github.com/scandio/lmvc-patat/blob/master/docs/lmvc-patat.sql)
-4. Copy the contents of the [sample-config.json](https://github.com/scandio/lmvc-patat/blob/master/sample-config.json) into a file named *config.json* and adjust its values if needed.
-5. Now copy the contents of the [.sample-htaccess-file](https://github.com/scandio/lmvc-patat/blob/master/.sample-htaccess) into a new *.htaccess* and set the app's root to whereever the app resides on your own *localhost*.
-6. Lastly copy the contents of the [/app/javascripts/sample-config.js](https://github.com/scandio/lmvc-patat/blob/master/app/javascripts/sample-config.js) into a new *config.js* and set the app's root to whereever the app resides on your own *localhost* too.
+### Download and setup work
 
-## Setup the database
+As I expect you to be on a Unix system, all you need is one fancy command downloading a bash-file which does all the work.
+If you're on Windows you need to clone, setup chmods, fetch dependencies and move sample-config file's content around yourself. It's what you deserve for it anyways ;-)
+
+So if you're on Unix run this:
+`bash -c "$(curl -fsSL http://git.io/xzIkXA)"`
+
+Kaboom! Hope it went well...
+
+### Setup the Database
 
 1. Setup a new database in your own MySQL and select it
-2. Import the security module [database](https://github.com/scandio/lmvc-modules/blob/master/lib/Scandio/lmvc/modules/security/docs/DatabasePrincipal.sql)
-3. Import the patat [database](https://github.com/scandio/lmvc-patat/blob/master/docs/lmvc-patat.sql)
+   - When you're using MAMP this is typically done on your *localhost* with *phymyadmin* as a front-end for your database
+2. Import the security module's [database](https://github.com/SEP007/lmvc-modules/blob/master/lib/Scandio/lmvc/modules/security/docs/DatabasePrincipal.sql)
+3. Import patat's [database](https://github.com/SEP007/lmvc-patat/blob/master/docs/lmvc-patat.sql)
+4. Adjust database credentials in app's `config.js`
 
-## Setup the app
-
-1. Copy the contents of the [sample-config.json](https://github.com/scandio/lmvc-patat/blob/master/sample-config.json) into a file named `config.json` and adjust its values if needed
-   - Meaning change database-name and credentials
-2. Lastly copy the contents of the [.-sample-htaccess-file](https://github.com/scandio/lmvc-patat/blob/master/.sample-htaccess) into a new `.htaccess`
-   - Set the app's root to whereever the app resides on your own *localhost*
-3. Now run `php composer.phar install` on your terminal and the dependency fetching will begin
+### Run it
 
 Launch the app in the browser e.g. [localhost/lmvc-patat](http://localhost/lmvc-patat).
 
