@@ -17,6 +17,16 @@ class Registration extends controllers\Registration
         static::render();
     }
 
+    public static function signupCustomer()
+    {
+        static::render();
+    }
+
+    public static function signupRestaurant()
+    {
+        static::render();
+    }
+
     public static function getSuggestHandle($restaurant = null)
     {
         $handle = \util\String::urlSlug($restaurant);
@@ -66,7 +76,7 @@ class Registration extends controllers\Registration
                 $location->insert();
 
                 return static::render([
-                    'success'   => true
+                    'success' => true
                 ]);
 
             } else {
@@ -93,7 +103,7 @@ class Registration extends controllers\Registration
             if ($parentResponse) {
 
                 return static::render([
-                    'success'   => true
+                    'success' => true
                 ]);
 
             } else {
@@ -110,7 +120,8 @@ class Registration extends controllers\Registration
         $userModel          = \models\Users::query()
                                 ->select('*')
                                 ->innerJoin(new \models\Locations(), 'Users.id = Locations.user_id')
-                                ->where('Users.id = :user_id', ['user_id' => $userId])->one();
+                                ->where('Users.id = :user_id', ['user_id' => $userId])
+                                ->one();
 
         return static::render([
             'user' => $userModel
