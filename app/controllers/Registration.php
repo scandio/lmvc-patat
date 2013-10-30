@@ -36,9 +36,9 @@ class Registration extends controllers\Registration
         ]);
     }
 
-    public static function postSignup($redirect = true)
+    public static function postSignupRestaurant($redirect = true)
     {
-        $signupForm = new forms\Signup();
+        $signupForm = new forms\SignupRestaurant();
         $signupForm->validate(static::request());
 
         if (! $signupForm->isValid()) {
@@ -64,6 +64,33 @@ class Registration extends controllers\Registration
                 $location->street       = static::request()->place;
 
                 $location->insert();
+
+                return static::render([
+                    'success'   => true
+                ]);
+
+            } else {
+                # This does not imply a form-validation error, its the last resort...
+                static::redirect('Registration::failure');
+            }
+        }
+    }
+
+    public static function postSignupCustomer($redirect = true)
+    {
+        $signupForm = new forms\SignupCustomer();
+        $signupForm->validate(static::request());
+
+        if (! $signupForm->isValid()) {
+            return static::render([
+                'error'     => true,
+                'errors'    => $signupForm->getErrors(),
+                'user'      => static::request()
+            ]);
+        } else {
+            $parentResponse = parent::postSignup(false);
+
+            if ($parentResponse) {
 
                 return static::render([
                     'success'   => true

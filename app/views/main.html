@@ -65,7 +65,8 @@
                         <ul class="nav pull-left">
                             <li class=""><a href="<?= $app->url('Application::index') ?>">Home</a></li>
                             <?php if(!Security::get()->isAuthenticated()): ?>
-                                <li><a href="<?= $app->url('Registration::signup') ?>">Sign up</a></li>
+                                <li><a href="<?= $app->url('Registration::signup-restaurant') ?>">Sign up</a></li>
+                                <li><a href="<?= $app->url('Registration::signup-customer') ?>">Register hunger</a></li>
                             <?php endif; ?>
                         </ul>
 

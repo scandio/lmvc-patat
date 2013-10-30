@@ -4,7 +4,7 @@ namespace forms;
 
 use Scandio\lmvc\modules\registration\forms;
 
-class Signup extends forms\Signup
+class SignupRestaurant extends forms\Signup
 {
     public $restaurant = [
         'mandatory' => ['message' => 'A name for your restaurant is compulsory!'],
