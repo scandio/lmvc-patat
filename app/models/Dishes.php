@@ -87,7 +87,7 @@ class Dishes
      * Gets the category id
      * @return mixed the category id
      */
-    public function getCategory_Id()
+    public function getCategory_id()
     {
         return $this->category_id;
     }
@@ -96,7 +96,7 @@ class Dishes
      * Sets the category id
      * @param $categoryId the category id
      */
-    public function setCategory_Id($categoryId)
+    public function setCategory_id($categoryId)
     {
         $this->category_id = $categoryId;
     }
