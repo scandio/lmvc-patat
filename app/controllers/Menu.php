@@ -24,7 +24,7 @@ class Menu extends SecureController {
             $dish = new \models\Dishes();
         } else {
             $dishModel = new \models\Dishes();
-            $dish = $dishModel->getDishByUser(Security::get()->currentUser()->id, $id);
+            $dish = $dishModel->getDishByUser($id, Security::get()->currentUser()->id);
         }
 
         $form = new \forms\Dish();
