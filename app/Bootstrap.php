@@ -5,7 +5,7 @@ use Scandio\lmvc\LVC;
 use Scandio\lmvc\modules\assetpipeline;
 use Scandio\lmvc\modules\upload;
 
-class Bootstrap extends \Scandio\lmvc\Bootstrap
+class Bootstrap extends \Scandio\lmvc\utils\bootstrap\Bootstrap
 {
     public function initialize()
     {
