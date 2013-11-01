@@ -73,6 +73,7 @@
                         <ul class="nav pull-right">
                             <?php if(Security::get()->isAuthenticated()): ?>
                                 <li><a href="<?= $app->url('Registration::edit') ?>">My Restaurant</a></li>
+                                <li><a href="<?= $app->url('Registration::edit-customer') ?>">My Profile</a></li>
                             <?php endif; ?>
                             <li><a href="<?= $app->url('Menu::index') ?>">Menu</a></li>
                             <?php if(Security::get()->isAuthenticated()): ?>

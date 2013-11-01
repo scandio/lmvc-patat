@@ -12,21 +12,21 @@
 <div class="row-fluid">
     <?php if($error): ?>
     <div class="alert alert-error">
-        <strong>Woopsi!</strong> You're missing some mandatory data, please add where needed!
+        <strong>Woopsi!</strong> You're missing some data, please fillout compulsory fields!
     </div>
     <?php elseif($success): ?>
     <div class="alert alert-success">
-        <strong>Very goode!</strong> All worked find, you are a registered hungry person now!
+        <strong>Very good!</strong> Everything worked just fine, you can sign in now!
     </div>
     <?php endif; ?>
 
-    <form id="registration-form" class="form-horizontal" method="POST" action="<?= $app->url('Registration::signup-customer') ?>">
+    <form id="registration-form" class="form-horizontal" method="POST" action="<?= $app->url('Registration::edit-customer') ?>">
         <fieldset class="span6">
-            <legend>Your profile</legend>
+            <legend>User information</legend>
             <div class="control-group">
                 <label class="control-label" for="username">Username</label>
                 <div class="controls">
-                    <input type="text" name="username" id="username" placeholder="Username" value="<?= $user->username ?>" />
+                    <input type="text" readonly name="username" id="username" placeholder="Username" value="<?= $user->username ?>" />
 
                     <?php foreach ($errors['username'] as $validator => $message): ?>
                     <span class="help-block <?= $validator ?>"><?= $message ?></span>
@@ -36,7 +36,7 @@
             <div class="control-group">
                 <label class="control-label" for="password">Password</label>
                 <div class="controls">
-                    <input type="password" name="password" id="password" placeholder="Password"  value="<?= $user->password ?>" />
+                    <input type="password" name="password" id="password" placeholder="Password" />
 
                     <?php foreach ($errors['password'] as $validator => $message): ?>
                     <span class="help-block <?= $validator ?>"><?= $message ?></span>
@@ -44,9 +44,9 @@
                 </div>
             </div>
             <div class="control-group">
-                <label class="control-label" for="password">Repeat password</label>
+                <label class="control-label" for="passwordRetyped">Repeat password</label>
                 <div class="controls">
-                    <input type="password" name="passwordRetyped" id="password-retyped" placeholder="Repeat password"  value="<?= $user->passwordRetyped ?>" />
+                    <input type="password" name="passwordRetyped" id="password-retyped" placeholder="Repeat password" />
 
                     <?php foreach ($errors['passwordRetyped'] as $validator => $message): ?>
                     <span class="help-block <?= $validator ?>"><?= $message ?></span>
@@ -54,7 +54,7 @@
                 </div>
             </div>
             <div class="control-group">
-                <label class="control-label" for="username">First- & Surname</label>
+                <label class="control-label" for="fullname">First- & Surname</label>
                 <div class="controls">
                     <input type="text" name="fullname" id="fullname" placeholder="First- & Surname" value="<?= $user->fullname ?>" />
                 </div>
@@ -62,7 +62,7 @@
             <div class="control-group">
                 <label class="control-label" for="password">E-Mail</label>
                 <div class="controls">
-                    <input type="email" name="email" id="email" placeholder="E-Mail"  value="<?= $user->email ?>" />
+                    <input type="email" name="email" id="email" placeholder="E-Mail" value="<?= $user->email ?>" />
 
                     <?php foreach ($errors['email'] as $validator => $message): ?>
                     <span class="help-block <?= $validator ?>"><?= $message ?></span>
@@ -78,17 +78,17 @@
             <div class="control-group">
                 <label class="control-label" for="password">Mobile</label>
                 <div class="controls">
-                    <input type="tel" name="mobile" id="mobile" placeholder="Mobile"  value="<?= $user->mobile ?>" />
+                    <input type="tel" name="mobile" id="mobile" placeholder="Mobile" value="<?= $user->mobile ?>" />
                 </div>
             </div>
         </fieldset>
 
-        <div class="control-group pull-left">
-            <button class="btn btn-primary" type="submit" id="signup" name="signup" value="true">Register</button>
-            <button class="btn" href="<?= $app->url('Application::index') ?>">Cancel</button>
+        <div class="control-group pull-right">
+            <button class="btn btn-primary" type="submit" id="edit" name="edit" value="true">Edit</button>
+            <button class="btn" href="<?= $app->url('Application::index') ?>">Reset</button>
         </div>
     </form>
 </div>
 
-<?= UI::js(Asset::assets(['jquery.nominatim.js', 'jquery.handle.js'], ['path' => 'plugins'])) ?>
+<?= UI::js(Asset::assets(['jquery.nominatim.js'], ['path' => 'plugins'])) ?>
 <?= UI::js(Asset::assets(['jquery.register.js'], ['path' => 'views'])) ?>

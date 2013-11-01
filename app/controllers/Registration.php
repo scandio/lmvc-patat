@@ -101,6 +101,11 @@ class Registration extends controllers\Registration
             $parentResponse = parent::postSignup(false);
 
             if ($parentResponse) {
+                $customer = new \models\Customers();
+
+                $customer->user_id      = $parentResponse->id;
+
+                $customer->insert();
 
                 return static::render([
                     'success' => true
@@ -122,6 +127,21 @@ class Registration extends controllers\Registration
                                 ->innerJoin(new \models\Locations(), 'Users.id = Locations.user_id')
                                 ->where('Users.id = :user_id', ['user_id' => $userId])
                                 ->one();
+
+        return static::render([
+            'user' => $userModel
+        ]);
+    }
+
+    public static function editCustomer($redirect = true)
+    {
+        $userId             = security\Security::get()->currentUser()->id;
+
+        $userModel          = \models\Users::query()
+            ->select('*')
+            ->innerJoin(new \models\Locations(), 'Users.id = Locations.user_id')
+            ->where('Users.id = :user_id', ['user_id' => $userId])
+            ->one();
 
         return static::render([
             'user' => $userModel
