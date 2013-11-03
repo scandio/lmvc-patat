@@ -12,10 +12,9 @@
         <a href="http://maps.google.com/?daddr=<?= $user->zip ?>+<?= $user->city ?>,+<?= $user->street ?>"><strong>Google Maps</strong></a>
     </p>
     <p>
-        Choose a travel mode -
-        <button name="mode_d" onclick="window.travelMode='driving';$('#map').patatmap('requestLocation');">Driving</button>
-        <button name="mode_w" onclick="window.travelMode='walking';$('#map').patatmap('requestLocation');">Walking</button>
-
+        Choose a travel mode :
+        <button class="btn btn-primary" disabled='disabled' name="mode_w" id="btn_walk" onclick="mode_toggle(this);">Walking</button>
+        <button class="btn btn-primary" name="mode_d" id="btn_drive" onclick="mode_toggle(this);">Driving</button>
     </p>
     <div class="hidden">
         <span id="longitude"></span>
