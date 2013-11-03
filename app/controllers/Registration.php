@@ -118,7 +118,7 @@ class Registration extends controllers\Registration
         }
     }
 
-    public static function edit($redirect = true)
+    public static function editRestaurant($redirect = true)
     {
         $userId             = security\Security::get()->currentUser()->id;
 
@@ -133,24 +133,9 @@ class Registration extends controllers\Registration
         ]);
     }
 
-    public static function editCustomer($redirect = true)
+    public static function postEditRestaurant($redirect = true)
     {
-        $userId             = security\Security::get()->currentUser()->id;
-
-        $userModel          = \models\Users::query()
-            ->select('*')
-            ->innerJoin(new \models\Locations(), 'Users.id = Locations.user_id')
-            ->where('Users.id = :user_id', ['user_id' => $userId])
-            ->one();
-
-        return static::render([
-            'user' => $userModel
-        ]);
-    }
-
-    public static function postEdit($redirect = true)
-    {
-        $signupForm = new forms\Signup();
+        $signupForm = new forms\SignupRestaurant();
         $signupForm->validate(static::request());
 
         if (!$signupForm->isValid()) {
@@ -177,6 +162,54 @@ class Registration extends controllers\Registration
                 $location->street       = static::request()->place;
 
                 $location->save();
+
+                static::render([
+                    'success'   => true,
+                    'user'      => static::request()
+                ]);
+            } else {
+                # This does not imply a form-validation error, its the last resort...
+                static::redirect('Registration::failure');
+            }
+        }
+    }
+
+    public static function editCustomer($redirect = true)
+    {
+        $userId             = security\Security::get()->currentUser()->id;
+
+        $userModel          = \models\Users::query()
+            ->select('*')
+            ->innerJoin(new \models\Customers(), 'Users.id = Customers.user_id')
+            ->where('Users.id = :user_id', ['user_id' => $userId])
+            ->one();
+
+        return static::render([
+            'user' => $userModel
+        ]);
+    }
+
+    public static function postEditCustomer($redirect = true)
+    {
+        $signupForm = new forms\SignupCustomer();
+        $signupForm->validate(static::request());
+
+        if (!$signupForm->isValid()) {
+            return static::render([
+                'error'     => true,
+                'errors'    => $signupForm->getErrors(),
+                'user'      => static::request()
+            ]);
+        } else {
+            $parentResponse     = parent::postEdit(false);
+            $userId             = security\Security::get()->currentUser()-id;
+
+            if ($parentResponse) {
+                $customer               = new \models\Customers();
+                $customer               = $customer::findBy('user_id', $userId);
+                $customer->user_id      = $userId;
+
+                $customer->save();
 
                 static::render([
                     'success'   => true,

@@ -81,12 +81,12 @@
                     <input type="tel" name="mobile" id="mobile" placeholder="Mobile" value="<?= $user->mobile ?>" />
                 </div>
             </div>
-        </fieldset>
 
-        <div class="control-group pull-right">
-            <button class="btn btn-primary" type="submit" id="edit" name="edit" value="true">Edit</button>
-            <button class="btn" href="<?= $app->url('Application::index') ?>">Reset</button>
-        </div>
+            <div class="control-group">
+                <button class="btn btn-primary" type="submit" id="edit" name="edit" value="true">Edit</button>
+                <button class="btn" href="<?= $app->url('Application::index') ?>">Reset</button>
+            </div>
+        </fieldset>
     </form>
 </div>
 
