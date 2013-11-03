@@ -28,6 +28,7 @@ if [ "$SET_CHMOD" == true ]
       chmod 0777 app/styles/_cache
       chmod 0777 app/fonts/_cache
       chmod 0777 app/markdown/_cache
+      chmod 0777 app/logs
 else
       echo "3.) NOT setting any chmods for caching directories..."
 fi
