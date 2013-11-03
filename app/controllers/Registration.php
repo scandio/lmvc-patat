@@ -150,7 +150,7 @@ class Registration extends controllers\Registration
 
             if ($parentResponse) {
                 $location               = new \models\Locations();
-                $location               = $location::findBy('user_id', $userId);
+                $location               = $location::findBy('user_id', $userId)->one();
                 $location->user_id      = $userId;
                 $location->longitude    = static::request()->longitude;
                 $location->latitude     = static::request()->latitude;
@@ -205,8 +205,8 @@ class Registration extends controllers\Registration
             $userId             = security\Security::get()->currentUser()-id;
 
             if ($parentResponse) {
-                $customer               = new \models\Customers();
-                $customer               = $customer::findBy('user_id', $userId);
+                $customer               = new \models\Users();
+                $customer               = $customer::findBy('id', $userId)->one();
                 $customer->user_id      = $userId;
 
                 $customer->save();
