@@ -62,6 +62,7 @@ class Registration extends controllers\Registration
 
             if ($parentResponse) {
                 $location = new \models\Locations();
+                $userToGroup = new \models\User_to_Groups();
 
                 $location->user_id      = $parentResponse->id;
                 $location->longitude    = static::request()->longitude;
@@ -73,7 +74,11 @@ class Registration extends controllers\Registration
                 $location->zip          = static::request()->zip;
                 $location->street       = static::request()->place;
 
+                $userToGroup->user_id   = $location->user_id;
+                $userToGroup->group_id  = 2;
+
                 $location->insert();
+                $userToGroup->insert();
 
                 return static::render([
                     'success' => true
@@ -102,10 +107,15 @@ class Registration extends controllers\Registration
 
             if ($parentResponse) {
                 $customer = new \models\Customers();
+                $userToGroups = new \models\UserToGroups();
 
                 $customer->user_id      = $parentResponse->id;
 
+                $userToGroups->user_id  = $customer->user_id;
+                $userToGroups->group_id = 3;
+
                 $customer->insert();
+                $userToGroups->insert();
 
                 return static::render([
                     'success' => true
