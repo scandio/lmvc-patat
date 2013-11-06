@@ -19,7 +19,7 @@
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
-# Dump of table
+# Dump of table Categories
 # ------------------------------------------------------------
 
 CREATE TABLE `Categories` (
@@ -56,7 +56,7 @@ CREATE TABLE `Dishes` (
   `advertised` int(1) NOT NULL,
   `category_id` int(11) NULL,
   PRIMARY KEY (`id`),
-  FOREIGN KEY (`category_id`) REFERENCES categories(id) ON UPDATE CASCADE ON DELETE RESTRICT
+  FOREIGN KEY (`category_id`) REFERENCES Categories(id) ON UPDATE CASCADE ON DELETE RESTRICT
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 LOCK TABLES `Dishes` WRITE;
