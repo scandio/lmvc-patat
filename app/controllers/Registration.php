@@ -62,7 +62,7 @@ class Registration extends controllers\Registration
 
             if ($parentResponse) {
                 $location = new \models\Locations();
-                $userToGroup = new \models\User_to_Groups();
+                $userToGroup = new \models\UserToGroups();
 
                 $location->user_id      = $parentResponse->id;
                 $location->longitude    = static::request()->longitude;
