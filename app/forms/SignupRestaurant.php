@@ -6,6 +6,8 @@ use Scandio\lmvc\modules\registration\forms;
 
 class SignupRestaurant extends forms\Signup
 {
+    public $isPost = false;
+
     public $restaurant = [
         'mandatory' => ['message' => 'A name for your restaurant is compulsory!'],
     ];
@@ -39,8 +41,15 @@ class SignupRestaurant extends forms\Signup
         'check-handle' => ['message' => 'This url is too short!']
     ];
 
+    public function setAsPost($isPost)
+    {
+        $this->isPost = $isPost;
+    }
+
     protected function checkHandle($name)
     {
+        if ($this->isPost) return;
+
         if (!empty($this->request()->$name) && strlen($this->request()->$name) <= 5
             || (\models\Locations::findBy('handle', $this->request()->$name)->count() > 0)
         ) {

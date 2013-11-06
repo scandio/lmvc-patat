@@ -49,6 +49,7 @@ class Registration extends controllers\Registration
     public static function postSignupRestaurant($redirect = true)
     {
         $signupForm = new forms\SignupRestaurant();
+        $signupForm->setAsPost(false);
         $signupForm->validate(static::request());
 
         if (! $signupForm->isValid()) {
@@ -146,6 +147,7 @@ class Registration extends controllers\Registration
     public static function postEditRestaurant($redirect = true)
     {
         $signupForm = new forms\SignupRestaurant();
+        $signupForm->setAsPost(true);
         $signupForm->validate(static::request());
 
         if (!$signupForm->isValid()) {
