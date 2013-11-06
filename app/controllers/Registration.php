@@ -81,9 +81,7 @@ class Registration extends controllers\Registration
                 $location->insert();
                 $userToGroup->insert();
 
-                return static::render([
-                    'success' => true
-                ]);
+                static::redirect('Menu::index');
 
             } else {
                 # This does not imply a form-validation error, its the last resort...
@@ -118,9 +116,7 @@ class Registration extends controllers\Registration
                 $customer->insert();
                 $userToGroups->insert();
 
-                return static::render([
-                    'success' => true
-                ]);
+                static::redirect('Menu::index');
 
             } else {
                 # This does not imply a form-validation error, its the last resort...
