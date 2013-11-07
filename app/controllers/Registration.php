@@ -129,11 +129,7 @@ class Registration extends controllers\Registration
     {
         $userId             = security\Security::get()->currentUser()->id;
 
-        $userModel          = \models\Users::query()
-                                ->select('*')
-                                ->innerJoin(new \models\Locations(), 'Users.id = Locations.user_id')
-                                ->where('Users.id = :user_id', ['user_id' => $userId])
-                                ->one();
+        $userModel          = \models\Users::getByLocation($userId);
 
         return static::render([
             'user' => $userModel
