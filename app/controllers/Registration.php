@@ -46,7 +46,10 @@ class Registration extends controllers\Registration
         ]);
     }
 
-    public static function postSignupRestaurant($redirect = true)
+    /**
+     * Post request with restaurant signup data
+     */
+    public static function postSignupRestaurant()
     {
         $signupForm = new forms\SignupRestaurant();
         $signupForm->setAsPost(false);
@@ -90,7 +93,10 @@ class Registration extends controllers\Registration
         }
     }
 
-    public static function postSignupCustomer($redirect = true)
+    /**
+     * Post request with customer signup data
+     */
+    public static function postSignupCustomer()
     {
         $signupForm = new forms\SignupCustomer();
         $signupForm->validate(static::request());
@@ -136,7 +142,10 @@ class Registration extends controllers\Registration
         ]);
     }
 
-    public static function postEditRestaurant($redirect = true)
+    /**
+     * Post request with restaurant modified data
+     */
+    public static function postEditRestaurant()
     {
         $signupForm = new forms\SignupRestaurant();
         $signupForm->setAsPost(true);
@@ -178,7 +187,7 @@ class Registration extends controllers\Registration
         }
     }
 
-    public static function editCustomer($redirect = true)
+    public static function editCustomer()
     {
         $userId             = security\Security::get()->currentUser()->id;
 
@@ -193,7 +202,10 @@ class Registration extends controllers\Registration
         ]);
     }
 
-    public static function postEditCustomer($redirect = true)
+    /**
+     * Post request with customer modified data
+     */
+    public static function postEditCustomer()
     {
         $signupForm = new forms\SignupCustomer();
         $signupForm->validate(static::request());
