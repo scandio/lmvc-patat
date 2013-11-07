@@ -30,6 +30,10 @@
        {
          "type": "git",
          "url": "https://github.com/SEP007/lmvc-troba.git"
+       },
+       {
+         "type": "git",
+         "url": "https://github.com/SEP007/lmvc-utils.git"
        }
     ],
     "require-dev": {

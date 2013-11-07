@@ -26,7 +26,7 @@
     </div>
     <?php endif; ?>
 
-    <form id="registration-form" class="form-horizontal" method="POST" action="<?= $app->url('Registration::signup') ?>">
+    <form id="registration-form" class="form-horizontal" method="POST" action="<?= $app->url('Registration::signup-restaurant') ?>">
         <fieldset class="span6">
             <legend>User data</legend>
             <div class="control-group">
@@ -175,8 +175,8 @@
         </fieldset>
 
         <div class="control-group pull-right">
-            <button class="btn btn-primary" type="submit" id="signup" name="signup" value="true">Anmelden</button>
-            <button class="btn" href="<?= $app->url('Application::index') ?>">Zurücksetzen</button>
+            <button class="btn btn-primary" type="submit" id="signup" name="signup" value="true">Register</button>
+            <button class="btn" href="<?= $app->url('Application::index') ?>">Cancel</button>
         </div>
     </form>
 </div>

@@ -65,13 +65,19 @@
                         <ul class="nav pull-left">
                             <li class=""><a href="<?= $app->url('Application::index') ?>">Home</a></li>
                             <?php if(!Security::get()->isAuthenticated()): ?>
-                                <li><a href="<?= $app->url('Registration::signup') ?>">Sign up</a></li>
+                                <li><a href="<?= $app->url('Registration::signup-restaurant') ?>">Sign up</a></li>
+                                <li><a href="<?= $app->url('Registration::signup-customer') ?>">Register hunger</a></li>
                             <?php endif; ?>
                         </ul>
 
                         <ul class="nav pull-right">
                             <?php if(Security::get()->isAuthenticated()): ?>
-                                <li><a href="<?= $app->url('Registration::edit') ?>">My Restaurant</a></li>
+                                <?php if(Security::get()->currentUser()->isInGroup("Customer")): ?>
+                                    <li><a href="<?= $app->url('Registration::edit-customer') ?>">My Profile</a></li>
+                                <?php endif; ?>
+                                <?php if(Security::get()->currentUser()->isInGroup("Restaurant")): ?>
+                                    <li><a href="<?= $app->url('Registration::edit-restaurant') ?>">My Restaurant</a></li>
+                                <?php endif; ?>
                             <?php endif; ?>
                             <li><a href="<?= $app->url('Menu::index') ?>">Menu</a></li>
                             <?php if(Security::get()->isAuthenticated()): ?>
