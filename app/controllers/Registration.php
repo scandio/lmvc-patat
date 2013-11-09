@@ -9,6 +9,7 @@ use \models;
 use \forms;
 use \util;
 use Scandio\lmvc\modules\security;
+use Scandio\lmvc\utils\config\Config;
 
 class Registration extends controllers\Registration
 {
@@ -118,6 +119,10 @@ class Registration extends controllers\Registration
 
                 $userToGroups->user_id  = $customer->user_id;
                 $userToGroups->group_id = 3;
+
+                $username = $parentResponse->username;
+                $address = $parentResponse->email;
+                Registration::sendEmail($username, $address);
 
                 $customer->insert();
                 $userToGroups->insert();
@@ -236,5 +241,40 @@ class Registration extends controllers\Registration
                 static::redirect('Registration::failure');
             }
         }
+    }
+
+    /**
+     * Sends a verification email
+     * @param $username
+     * @param $address email address of a user
+     */
+    private static function sendEmail($username, $address)
+    {
+        $messageArgs = array(
+            "username" => $username,
+            "usernamehash" => md5($username),
+            "email" => $address
+        );
+        $subject = Config::get()->emails->subjects->registration;
+        $message = Config::get()->emails->messages->registration . Config::get()->emails->links->emailVerification;
+        $header = Config::get()->emails->headers->content;
+        mail($address, $subject, Registration::_interpolate($message, $messageArgs), $header);
+    }
+
+    /**
+     * Interpolates context values into the message placeholders.
+     */
+    private function _interpolate($message, array $context = array())
+    {
+        // build a replacement array with braces around the context keys
+        $replace = array();
+        $message = (string) $message;
+
+        foreach ($context as $key => $val) {
+            $replace['{' . $key . '}'] = $val;
+        }
+
+        // interpolate replacement values into the message and return
+        return strtr($message, $replace);
     }
 }
