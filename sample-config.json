@@ -49,7 +49,7 @@
     },
 
     "emails": {
-        "sender": "info@patat.com",
+        "sender": "LMVC Patat <info@patat.com>",
         "subjects": {
             "registration": "Signup verification"
         },
