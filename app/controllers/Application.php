@@ -10,7 +10,10 @@ class Application extends AnonymousController
 {
     public static function index()
     {
-        Logger::instance()->info('The Patat {what}!', ['what' => 'started']);
+        Logger::instance()->warning('The Patat {what}!', ['what' => 'started']);
+        Logger::instance()->info('The Server: {server}!', ['server' => $_SERVER]);
+        Logger::instance()->error('Kostas you {what}!', ['what' => 'broke it!']);
+
         return static::render();
     }
 }
